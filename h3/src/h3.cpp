@@ -46,10 +46,6 @@
 #pragma comment(lib, "box2d-s.lib")
 #endif // NDEBUG
 
-#define kPI      (3.14159f)
-#define kDEG2RAD (kPI / 180.0f)
-#define kRAD2DEG (180.0f / kPI)
-
 // #define H3_DEBUG_DRAW_PHYSICS
 
 // ============================================================================
@@ -566,11 +562,10 @@ H3_CAPI void H3_Object_Rotate(H3Handle object, float angle)
 	SH3SceneObject_* obj = ((SH3SceneObject_*)object);
 
 	if (obj->physicsBody)
-		obj->physicsBody->SetTransform(obj->physicsBody->GetPosition(), obj->physicsBody->GetAngle() + angle * kDEG2RAD);
+		obj->physicsBody->SetTransform(obj->physicsBody->GetPosition(), obj->physicsBody->GetAngle() + angle * H3_DEG2RAD);
 	else
 		obj->transform.rotate(angle);
 }
-
 
 H3_CAPI void H3_Object_Scale(H3Handle object, float s)
 {
@@ -581,6 +576,51 @@ H3_CAPI void H3_Object_Scale(H3Handle object, float s)
 	H3_ASSERT(!obj->physicsBody, "This object has physics enabled. Expect strange behavior.");
 
 	obj->transform.scale(sf::Vector2f(s, s));
+}
+
+H3_CAPI void H3_Object_SetTranslation(H3Handle object, float x, float y)
+{
+	H3_ASSERT(object, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)object)->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
+	SH3SceneObject_* obj = ((SH3SceneObject_*)object);
+
+	float px, py, rot, sx, sy;
+	H3Internal_DecomposeTransform(&obj->transform, px, py, rot, sx, sy);
+	
+	H3_Object_ResetTransform(object);
+	H3_Object_Translate(object, x, y);
+	H3_Object_Rotate(object, rot);
+	//H3_Object_Scale(object, sx);
+}
+
+H3_CAPI void H3_Object_SetRotation(H3Handle object, float angle)
+{
+	H3_ASSERT(object, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)object)->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
+	SH3SceneObject_* obj = ((SH3SceneObject_*)object);
+
+	float px, py, rot, sx, sy;
+	H3Internal_DecomposeTransform(&obj->transform, px, py, rot, sx, sy);
+
+	H3_Object_ResetTransform(object);
+	H3_Object_Translate(object, px, py);
+	H3_Object_Rotate(object, angle);
+	//H3_Object_Scale(object, sx);
+}
+
+H3_CAPI void H3_Object_SetScale(H3Handle object, float s)
+{
+	H3_ASSERT(object, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)object)->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
+	SH3SceneObject_* obj = ((SH3SceneObject_*)object);
+
+	float px, py, rot, sx, sy;
+	H3Internal_DecomposeTransform(&obj->transform, px, py, rot, sx, sy);
+
+	H3_Object_ResetTransform(object);
+	H3_Object_Translate(object, px, py);
+	H3_Object_Rotate(object, rot);
+	//H3_Object_Scale(object, s);
 }
 
 H3_CAPI void H3_Object_ScaleNonUniform(H3Handle object, float x, float y)
@@ -1150,6 +1190,22 @@ H3_CAPI void H3_Font_Printf(H3Handle h3, SH3TextProperties properties, SH3Transf
 	window->draw(text);
 }
 
+H3_CAPI void H3_GetView(H3Handle h3, float* x, float* y, float* w, float* h, float* vpw, float* vph)
+{
+	H3_ASSERT_CONSOLE(h3, "h3 must not be NULL");
+	sf::RenderWindow* window = (sf::RenderWindow*)h3;
+
+	auto view = window->getView();
+	*x = view.getCenter().x;
+	*y = view.getCenter().y;
+	*w = view.getSize().x;
+	*h = view.getSize().y;
+
+	auto vp = window->getSize();
+	*vpw = vp.x;
+	*vph = vp.y;
+}
+
 H3_CAPI void H3_SetView(H3Handle h3, SH3Transform* transform, float w, float h)
 {
 	H3_ASSERT_CONSOLE(h3, "h3 must not be NULL");
@@ -1167,6 +1223,21 @@ H3_CAPI void H3_SetView(H3Handle h3, SH3Transform* transform, float w, float h)
 	H3_Listener_SetPosition(x, y);
 
  	window->setView(view);
+}
+
+H3_CAPI void H3_SetView2(H3Handle h3, float x, float y, float w, float h)
+{
+	H3_ASSERT_CONSOLE(h3, "h3 must not be NULL");
+	sf::RenderWindow* window = (sf::RenderWindow*)h3;
+
+	sf::View view;
+
+	view.setCenter(sf::Vector2f(x, y));
+	view.setSize(sf::Vector2f(w, h));
+
+	H3_Listener_SetPosition(x, y);
+
+	window->setView(view);
 }
 
 H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
@@ -1214,7 +1285,7 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 					o->transform = sf::Transform::Identity;
 
 					const b2Vec2& physPosition = o->physicsBody->GetPosition();
-					o->transform.translate(sf::Vector2f(physPosition.x * 100.0f, physPosition.y * 100.0f)).rotate(o->physicsBody->GetAngle() * kRAD2DEG);
+					o->transform.translate(sf::Vector2f(physPosition.x * 100.0f, physPosition.y * 100.0f)).rotate(o->physicsBody->GetAngle() * H3_RAD2DEG);
 				}
 
 				o->globalTransform = parentTransform * o->transform;
@@ -1467,9 +1538,9 @@ void H3Internal_DecomposeTransform(sf::Transform* transform, float& px, float& p
 	float dist = sqrtf(unit.x * unit.x + unit.y * unit.y);
 	sx = sy = dist;
 
-	r = atan2f(unit.y, unit.x) * kRAD2DEG;
-	if (r < 0.0f)
-		r = 360.0f - r;
+	r = atan2f(unit.y, unit.x) * H3_RAD2DEG;
+	//if (r < 0.0f)
+	//	r = 360.0f - r;
 }
 
 b2Shape* H3Internal_MakePhysicsShape(const SH3ColliderDesc& desc)

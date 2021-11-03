@@ -185,6 +185,9 @@ void                   H3_Object_ResetTransform(H3Handle object);
 void                   H3_Object_Translate(H3Handle object, float x, float y);
 void                   H3_Object_Rotate(H3Handle object, float angle);
 void                   H3_Object_Scale(H3Handle object, float s);
+void                   H3_Object_SetTranslation(H3Handle object, float x, float y);
+void                   H3_Object_SetRotation(H3Handle object, float angle);
+void                   H3_Object_SetScale(H3Handle object, float s);
 void                   H3_Object_ScaleNonUniform(H3Handle object, float x, float y);
 void                   H3_Object_AddComponent(H3Handle object, SH3Component component);
 SH3Component*          H3_Object_GetComponent(H3Handle object, uint32_t componentId);
@@ -229,7 +232,9 @@ H3Handle               H3_Font_Load(const char* path);
 void                   H3_Font_Destroy(H3Handle* font);
 void                   H3_Font_Printf(H3Handle h3, SH3TextProperties properties, SH3Transform* transform, const char* format, ...);
 
+void                   H3_GetView(H3Handle h3, float* x, float* y, float* w, float* h, float* vpw, float* vph);
 void                   H3_SetView(H3Handle h3, SH3Transform* transform, float w, float h);
+void                   H3_SetView2(H3Handle h3, float x, float y, float w, float h);
 bool                   H3_DoFrame(H3Handle h3, H3Handle scene);
 
 H3_CAPI_END_BLOCK

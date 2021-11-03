@@ -6,6 +6,10 @@
 #include <stdarg.h>
 #include <stdint.h>
 
+#define H3_PI      (3.14159f)
+#define H3_DEG2RAD (H3_PI / 180.0f)
+#define H3_RAD2DEG (180.0f / H3_PI)
+
 #ifdef __cplusplus
 #define H3_CAPI             extern "C"
 #define H3_CAPI_BEGIN_BLOCK extern "C" { 
