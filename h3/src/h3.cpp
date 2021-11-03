@@ -1158,8 +1158,8 @@ H3_CAPI void H3_Font_Printf(H3Handle h3, SH3TextProperties properties, SH3Transf
 		sf::Vector2f viewCenter = window->getView().getCenter();
 		sf::Vector2f viewExtent = window->getView().getSize();
 
-		x += viewCenter.x - (viewExtent.x * 0.5f);
-		y += viewCenter.y - (viewExtent.y * 0.5f);
+		x = viewCenter.x - (viewExtent.x * 0.5f) + (x - viewCenter.x);
+		y = viewCenter.y - (viewExtent.y * 0.5f) + (y - viewCenter.y);
 	}
 
 	text.setPosition(sf::Vector2f(x, y));
