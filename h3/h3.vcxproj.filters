@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\h3">
+      <UniqueIdentifier>{f68ab0cd-1828-4ee5-8b38-894d3f43a3b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\h3">
+      <UniqueIdentifier>{233e28a1-90a9-4eab-b5ba-d2103bfa6dad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\h3\h3">
+      <UniqueIdentifier>{5efc675e-5b48-4dcd-b3d7-92b8c2b660ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\h3\imgui">
+      <UniqueIdentifier>{de48fe07-8d03-4712-9ea7-74e07db69c51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\h3\h3">
+      <UniqueIdentifier>{cffc90ad-d3dc-4c88-91a5-afb4194ac73e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\h3\imgui">
+      <UniqueIdentifier>{1d3cc336-5869-417a-944c-d6c949397f00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\components">
+      <UniqueIdentifier>{d2820985-0571-498f-a2f5-2696f799eb7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\components">
+      <UniqueIdentifier>{a0fee91c-659b-48b4-b25e-855a67e37594}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\imgui\imgui.cpp">
+      <Filter>Source Files\h3\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_demo.cpp">
+      <Filter>Source Files\h3\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_draw.cpp">
+      <Filter>Source Files\h3\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_tables.cpp">
+      <Filter>Source Files\h3\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui_widgets.cpp">
+      <Filter>Source Files\h3\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui\imgui-SFML.cpp">
+      <Filter>Source Files\h3\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\h3\ui.cpp">
+      <Filter>Source Files\h3\h3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\h3.cpp">
+      <Filter>Source Files\h3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\h3\common.cpp">
+      <Filter>Source Files\h3\h3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\h3\internal.cpp">
+      <Filter>Source Files\h3\h3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\spritecomponent.c">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\cameracomponent.c">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\h3\tmxlayer.cpp">
+      <Filter>Source Files\h3\h3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\maplayercomponent.c">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\animatedspritecomponent.c">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\audiosourcecomponent.c">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="include\components\rectanglecollidercomponent.c">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\textcomponent.c">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\imgui\imconfig.h">
+      <Filter>Header Files\h3\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\imgui.h">
+      <Filter>Header Files\h3\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\imgui_internal.h">
+      <Filter>Header Files\h3\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\imgui-SFML.h">
+      <Filter>Header Files\h3\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\imgui-SFML_export.h">
+      <Filter>Header Files\h3\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\imstb_rectpack.h">
+      <Filter>Header Files\h3\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\imstb_textedit.h">
+      <Filter>Header Files\h3\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\imstb_truetype.h">
+      <Filter>Header Files\h3\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="include\h3\ui.h">
+      <Filter>Header Files\h3\h3</Filter>
+    </ClInclude>
+    <ClInclude Include="include\h3\common.h">
+      <Filter>Header Files\h3\h3</Filter>
+    </ClInclude>
+    <ClInclude Include="include\h3.h">
+      <Filter>Header Files\h3</Filter>
+    </ClInclude>
+    <ClInclude Include="include\h3\internal.h">
+      <Filter>Header Files\h3\h3</Filter>
+    </ClInclude>
+    <ClInclude Include="include\components\spritecomponent.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\components\cameracomponent.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\h3\tmxlayer.h">
+      <Filter>Header Files\h3\h3</Filter>
+    </ClInclude>
+    <ClInclude Include="include\components\maplayercomponent.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\components\animatedspritecomponent.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\components\audiosourcecomponent.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\components\rectanglecollidercomponent.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\components\textcomponent.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
