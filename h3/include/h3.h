@@ -170,7 +170,7 @@ void                   H3_Input_GetMousePos(H3Handle h3, int* x, int* y);
 bool                   H3_Input_IsMouseBtnDown(EH3MouseButton btn);
 bool                   H3_Input_IsMouseBtnPressed(EH3MouseButton btn);
 
-H3Handle               H3_Scene_Create(H3Handle h3);
+H3Handle               H3_Scene_Create(H3Handle h3, bool physicsLocksRotation);
 void                   H3_Scene_Destroy(H3Handle* scene);
 void                   H3_Scene_SetGravity(H3Handle scene, float x, float y);
 

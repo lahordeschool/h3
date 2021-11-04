@@ -160,6 +160,7 @@ struct SH3Scene_
 	std::map<int32_t, std::vector<SH3SceneObject_*>>  objectsByRenderOrder;
 
 	b2World* physicsWorld;
+	bool     physicsLocksRotation;
 };
 
 struct SH3TmxMap_
@@ -306,7 +307,7 @@ bool H3Internal_ObjectOwnsObject(H3Handle needle, H3Handle haystack);
 void H3Internal_DecomposeTransform(sf::Transform* transform, float& px, float& py, float& r, float& sx, float& sy);
 
 b2Shape* H3Internal_MakePhysicsShape(const SH3ColliderDesc& desc);
-b2Body*  H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, SH3ColliderDesc* descList, uint32_t numShapes);
+b2Body*  H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, SH3ColliderDesc* descList, uint32_t numShapes, bool rotationLocked);
 
 // ============================================================================
 
@@ -388,12 +389,13 @@ H3_CAPI bool H3_Input_IsMouseBtnPressed(EH3MouseButton btn)
 	return (gCurrentMouseButtonStates[btn] && !gPreviousMouseButtonStates[btn]);
 }
 
-H3_CAPI H3Handle H3_Scene_Create(H3Handle h3)
+H3_CAPI H3Handle H3_Scene_Create(H3Handle h3, bool physicsLocksRotation)
 {
 	static CollisionHandler s_gCollisionHandler;
 
 	SH3Scene_* scn = new SH3Scene_;
 	scn->physicsWorld = new b2World(b2Vec2(0.0f, 0.0f));
+	scn->physicsLocksRotation = physicsLocksRotation;
 
 	scn->physicsWorld->SetAllowSleeping(true);
 	scn->physicsWorld->SetContinuousPhysics(true);
@@ -726,7 +728,7 @@ H3_CAPI void H3_Object_EnablePhysicsEx(H3Handle object, SH3ColliderDesc* descLis
 	if (sObject->physicsBody)
 		sObject->physicsBody->SetEnabled(true);
 	else
-		sObject->physicsBody = H3Internal_CreateAndAddPhysicsBody(sObject->scene->physicsWorld, 0.0f, 0.0f, descList, numShapes);
+		sObject->physicsBody = H3Internal_CreateAndAddPhysicsBody(sObject->scene->physicsWorld, 0.0f, 0.0f, descList, numShapes, sObject->scene->physicsLocksRotation);
 
 	sObject->physicsEnabled = true;
 }
@@ -969,7 +971,7 @@ H3_CAPI void H3_Map_RegisterObjectLayerForPhysicsInScene(H3Handle scene, H3Handl
 		}
 
 		if (colliders.size() > 0)
-			H3Internal_CreateAndAddPhysicsBody(scn->physicsWorld, 0.0f, 0.0f, &colliders[0], colliders.size());
+			H3Internal_CreateAndAddPhysicsBody(scn->physicsWorld, 0.0f, 0.0f, &colliders[0], colliders.size(), true);
 	}
 }
 
@@ -1656,7 +1658,7 @@ b2Shape* H3Internal_MakePhysicsShape(const SH3ColliderDesc& desc)
 	return shape;
 }
 
-b2Body* H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, SH3ColliderDesc* descList, uint32_t numShapes)
+b2Body* H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, SH3ColliderDesc* descList, uint32_t numShapes, bool rotationLocked)
 {
 	b2BodyDef bodyDef;
 	bodyDef.type = [](EH3ColliderDynamicsType type) {
@@ -1669,7 +1671,7 @@ b2Body* H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, S
 	}(descList[0].dynamicsType);
 
 	bodyDef.position.Set(px, py);
-	bodyDef.fixedRotation = (descList[0].dynamicsType == CDT_Dynamic);
+	bodyDef.fixedRotation = rotationLocked ? (descList[0].dynamicsType == CDT_Dynamic) : false;
 	b2Body* result = world->CreateBody(&bodyDef);
 
 	for (uint32_t i = 0; i < numShapes; ++i)
