@@ -450,6 +450,7 @@ H3_CAPI H3Handle H3_Object_Create(H3Handle scene, const char* objName, H3Handle 
 	obj->renderOrder = 0;
 	obj->physicsBody = nullptr;
 	obj->enabled = true;
+	obj->physicsEnabled = false;
 
 	obj->transform = sf::Transform::Identity;
 
@@ -726,6 +727,8 @@ H3_CAPI void H3_Object_EnablePhysicsEx(H3Handle object, SH3ColliderDesc* descLis
 		sObject->physicsBody->SetEnabled(true);
 	else
 		sObject->physicsBody = H3Internal_CreateAndAddPhysicsBody(sObject->scene->physicsWorld, 0.0f, 0.0f, descList, numShapes);
+
+	sObject->physicsEnabled = true;
 }
 
 H3_CAPI void H3_Object_DisablePhysics(H3Handle object)
@@ -1319,6 +1322,9 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 			if (scn->physicsWorld)
 				scn->physicsWorld->Step(dt.asSeconds(), 6, 2);
 
+			for (auto o : scn->rootObjects)
+				H3Internal_UpdateObjectRecursive(h3, o, t.asSeconds(), dt.asSeconds(), &noTransform, 0);
+
 			std::function<void(SH3SceneObject_*, sf::Transform)> UpdateGlobalTransformRecursive;
 			UpdateGlobalTransformRecursive = [&](SH3SceneObject_* o, sf::Transform parentTransform)
 			{
@@ -1347,9 +1353,6 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 				UpdateGlobalTransformRecursive(o, noTransform);
 			}
 		}
-
-		for (auto o : scn->rootObjects)
-			H3Internal_UpdateObjectRecursive(h3, o, t.asSeconds(), dt.asSeconds(), &noTransform, 0);
 	}
 
 	sf::RenderWindow* window = (sf::RenderWindow*)h3;
@@ -1362,10 +1365,34 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 		SH3Scene_* scn = (SH3Scene_*)scene;
 
 		for (auto& k : scn->objectsByRenderOrder)
+		{
 			for (SH3SceneObject_* obj : k.second)
+			{
+				if (!obj->enabled)
+					continue;
+
+				bool recurseChainCancelsRender = false;
+
+				SH3SceneObject_* parent = obj->parent;
+				while (parent)
+				{
+					if (!parent->enabled)
+					{
+						recurseChainCancelsRender = true;
+						break;
+					}
+
+					parent = parent->parent;
+				}
+
+				if (recurseChainCancelsRender)
+					continue;
+
 				for (auto& c : obj->components)
 					if (c.Draw)
 						c.Draw(h3, &obj->globalTransform, c.properties);
+			}
+		}
 
 #ifdef H3_DEBUG_DRAW_PHYSICS
 		scn->physicsWorld->DebugDraw();
