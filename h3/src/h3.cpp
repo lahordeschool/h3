@@ -1323,7 +1323,7 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 			UpdateGlobalTransformRecursive = [&](SH3SceneObject_* o, sf::Transform parentTransform)
 			{
 				if (!o->enabled)
-					continue;
+					return;
 
 				if (o->physicsBody)
 				{
