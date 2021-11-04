@@ -177,6 +177,8 @@ void                   H3_Scene_SetGravity(H3Handle scene, float x, float y);
 H3Handle               H3_Object_Create(H3Handle scene, const char* objName, H3Handle parent);
 void                   H3_Object_Destroy(H3Handle* object, bool recursive);
 H3Handle               H3_Object_Get(H3Handle scene, const char* objName);
+void                   H3_Object_SetEnabled(H3Handle object, bool enabled);
+bool                   H3_Object_GetEnabled(H3Handle object);
 const char*            H3_Object_GetName(H3Handle object);
 int32_t                H3_Object_GetRenderOrder(H3Handle object);
 void                   H3_Object_SetRenderOrder(H3Handle object, int32_t renderOrder);

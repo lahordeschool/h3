@@ -132,6 +132,8 @@ struct SH3SceneObject_
 {
 	EH3TypeInternal type = EH3TypeInternal::SceneObject;
 
+	bool                               enabled;
+
 	int32_t                            renderOrder;
 
 	SH3Scene_*                         scene;
@@ -143,6 +145,7 @@ struct SH3SceneObject_
 	sf::Transform                      transform;
 	sf::Transform                      globalTransform;
 
+	bool                               physicsEnabled;
 	b2Body*                            physicsBody;
 };
 
@@ -446,6 +449,7 @@ H3_CAPI H3Handle H3_Object_Create(H3Handle scene, const char* objName, H3Handle 
 	obj->parent = nullptr;
 	obj->renderOrder = 0;
 	obj->physicsBody = nullptr;
+	obj->enabled = true;
 
 	obj->transform = sf::Transform::Identity;
 
@@ -487,6 +491,41 @@ H3_CAPI H3Handle H3_Object_Get(H3Handle scene, const char* objName)
 		return scn->allObjects[sObjName];
 
 	return nullptr;
+}
+
+H3_CAPI void H3_Object_SetEnabled(H3Handle object, bool enabled)
+{
+	H3_ASSERT(object, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)object)->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
+	SH3SceneObject_* obj = ((SH3SceneObject_*)object);
+
+	obj->enabled = enabled;
+
+	if (!enabled)
+	{
+		if (obj->physicsBody)
+		{
+			obj->physicsEnabled = obj->physicsBody->IsEnabled();
+			if (obj->physicsBody->IsEnabled())
+				H3_Object_DisablePhysics(object);
+		}
+	}
+	else
+	{
+		if (obj->physicsEnabled)
+		{
+			H3_Object_EnablePhysicsEx(object, nullptr, 0);
+		}
+	}
+}
+
+H3_CAPI bool H3_Object_GetEnabled(H3Handle object)
+{
+	H3_ASSERT(object, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)object)->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
+	SH3SceneObject_* obj = ((SH3SceneObject_*)object);
+
+	return obj->enabled;
 }
 
 H3_CAPI const char* H3_Object_GetName(H3Handle object)
@@ -1261,6 +1300,9 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 
 		for (auto [_, o] : scn->allObjects)
 		{ // Init components in object at first use
+			if (!o->enabled)
+				continue;
+
 			for (auto& c : o->components)
 			{
 				if (!c.isInitialized)
@@ -1280,6 +1322,9 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 			std::function<void(SH3SceneObject_*, sf::Transform)> UpdateGlobalTransformRecursive;
 			UpdateGlobalTransformRecursive = [&](SH3SceneObject_* o, sf::Transform parentTransform)
 			{
+				if (!o->enabled)
+					continue;
+
 				if (o->physicsBody)
 				{
 					o->transform = sf::Transform::Identity;
@@ -1295,7 +1340,12 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 			};
 
 			for (auto o : scn->rootObjects)
+			{
+				if (!o->enabled)
+					continue;
+
 				UpdateGlobalTransformRecursive(o, noTransform);
+			}
 		}
 
 		for (auto o : scn->rootObjects)
@@ -1409,6 +1459,9 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 
 void H3Internal_UpdateObjectRecursive(H3Handle h3, SH3SceneObject_* object, float t, float dt, sf::Transform* globalTransform, uint32_t componentTypeFlag)
 {
+	if (!object->enabled)
+		return;
+
 	sf::Transform xform = (*globalTransform) * object->transform;
 
 	for (auto& c : object->components)
@@ -1427,6 +1480,9 @@ void H3Internal_UpdateObjectRecursive(H3Handle h3, SH3SceneObject_* object, floa
 
 void H3Internal_RenderObjectRecursive(H3Handle h3, SH3SceneObject_* object, sf::Transform* globalTransform)
 {
+	if (!object->enabled)
+		return;
+
 	sf::Transform xform = (*globalTransform) * object->transform;
 
 	for (auto& c : object->components)
@@ -1439,6 +1495,9 @@ void H3Internal_RenderObjectRecursive(H3Handle h3, SH3SceneObject_* object, sf::
 
 void H3Internal_RenderObjectRecursiveWithRenderOrder(H3Handle h3, SH3SceneObject_* object, sf::Transform* globalTransform, int32_t renderOrder)
 { // TODO: This is not optimized and computes way more transforms than necessary.
+	if (!object->enabled)
+		return;
+
 	sf::Transform xform = (*globalTransform) * object->transform;
 
 	for (auto& c : object->components)
