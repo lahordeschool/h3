@@ -766,6 +766,13 @@ H3_CAPI void H3_Object_SetVelocity(H3Handle object, float vx, float vy)
 	sObject->physicsBody->SetLinearVelocity(b2Vec2(vx * 0.01f, vy * 0.01f));
 }
 
+H3_CAPI void H3_Object_AddVelocity(H3Handle object, float vx, float vy)
+{
+	float bx, by;
+	H3_Object_GetVelocity(object, &bx, &by);
+	H3_Object_SetVelocity(object, bx + vx, by + vy);
+}
+
 H3_CAPI void H3_Transform_GetPosition(SH3Transform* transform, float* x, float* y)
 {
 	H3_ASSERT_CONSOLE(transform, "transform must not be NULL");

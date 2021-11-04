@@ -198,6 +198,7 @@ void                   H3_Object_EnablePhysicsEx(H3Handle object, SH3ColliderDes
 void                   H3_Object_DisablePhysics(H3Handle object);
 void                   H3_Object_GetVelocity(H3Handle object, float* vx, float* vy);
 void                   H3_Object_SetVelocity(H3Handle object, float vx, float vy);
+void                   H3_Object_AddVelocity(H3Handle object, float vx, float vy);
 
 
 void                   H3_Transform_GetPosition(SH3Transform* transform, float* x, float* y);
