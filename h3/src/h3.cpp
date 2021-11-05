@@ -152,6 +152,10 @@ struct SH3SceneObject_
 struct SH3Scene_
 {
 	EH3TypeInternal type = EH3TypeInternal::Scene;
+	bool                               processing;
+
+	std::unordered_map<std::string, SH3SceneObject_*> deferredAdditions;
+	std::vector<std::pair<SH3SceneObject_*, bool>>    deferredDeletions;
 
 	std::unordered_map<std::string, SH3SceneObject_*> allObjects;
 	std::vector<SH3SceneObject_*>                     rootObjects;
@@ -297,6 +301,7 @@ bool      gPreviousMouseButtonStates[EH3MouseButton_Count] = { false };
 
 // ============================================================================
 
+void H3Internal_AddObjectToScene(SH3SceneObject_* object, const std::string& sObjName, SH3Scene_* scene);
 void H3Internal_UpdateObjectRecursive(H3Handle h3, SH3SceneObject_* object, float t, float dt, sf::Transform* globalTransform, uint32_t componentTypeFlag);
 void H3Internal_RenderObjectRecursive(H3Handle h3, SH3SceneObject_* object, sf::Transform* globalTransform);
 void H3Internal_RenderObjectRecursiveWithRenderOrder(H3Handle h3, SH3SceneObject_* object, sf::Transform* globalTransform, int32_t renderOrder);
@@ -307,7 +312,7 @@ bool H3Internal_ObjectOwnsObject(H3Handle needle, H3Handle haystack);
 void H3Internal_DecomposeTransform(sf::Transform* transform, float& px, float& py, float& r, float& sx, float& sy);
 
 b2Shape* H3Internal_MakePhysicsShape(const SH3ColliderDesc& desc);
-b2Body*  H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, SH3ColliderDesc* descList, uint32_t numShapes, bool rotationLocked);
+b2Body*  H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, SH3ColliderDesc* descList, uint32_t numShapes, bool rotationLocked, void* userData);
 
 // ============================================================================
 
@@ -396,6 +401,7 @@ H3_CAPI H3Handle H3_Scene_Create(H3Handle h3, bool physicsLocksRotation)
 	SH3Scene_* scn = new SH3Scene_;
 	scn->physicsWorld = new b2World(b2Vec2(0.0f, 0.0f));
 	scn->physicsLocksRotation = physicsLocksRotation;
+	scn->processing = false;
 
 	scn->physicsWorld->SetAllowSleeping(true);
 	scn->physicsWorld->SetContinuousPhysics(true);
@@ -444,9 +450,6 @@ H3_CAPI H3Handle H3_Object_Create(H3Handle scene, const char* objName, H3Handle 
 	H3_ASSERT(!scn->allObjects.count(sObjName), "An object with this name already exists");
 
 	SH3SceneObject_* obj = new SH3SceneObject_;
-	scn->allObjects[sObjName] = obj;
-	scn->objectNames[obj] = sObjName;
-	scn->objectsByRenderOrder[0].push_back(obj);
 	obj->scene = scn;
 	obj->parent = nullptr;
 	obj->renderOrder = 0;
@@ -456,17 +459,10 @@ H3_CAPI H3Handle H3_Object_Create(H3Handle scene, const char* objName, H3Handle 
 
 	obj->transform = sf::Transform::Identity;
 
-	if (parent)
-	{
-		H3_ASSERT(H3Internal_SceneOwnsObject(scene, parent), "Handle type mismatch");
-
-		SH3SceneObject_* oParent = (SH3SceneObject_*)parent;
-		obj->parent = oParent;
-		oParent->children.push_back(obj);
-	}
+	if (!scn->processing)
+		H3Internal_AddObjectToScene(obj, sObjName, scn);
 	else
-		scn->rootObjects.push_back(obj);
-
+		scn->deferredAdditions[sObjName] = obj;
 	return obj;
 }
 
@@ -477,7 +473,11 @@ H3_CAPI void H3_Object_Destroy(H3Handle* object, bool recursive)
 	H3_ASSERT(((SH3ObjectBase_*)(*object))->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
 	SH3SceneObject_* sObject = (SH3SceneObject_*)(*object);
 
-	H3Internal_DestroyObject((SH3SceneObject_*)(*object), recursive);
+	if (!sObject->scene->processing)
+		H3Internal_DestroyObject(sObject, recursive);
+	else
+		sObject->scene->deferredDeletions.push_back(std::make_pair(sObject, recursive));
+	
 	*object = nullptr;
 }
 
@@ -712,6 +712,19 @@ H3_CAPI SH3Component* H3_Object_GetComponent(H3Handle object, uint32_t component
 	return nullptr;
 }
 
+H3_CAPI bool H3_Object_HasComponent(H3Handle object, uint32_t componentId)
+{
+	H3_ASSERT(object, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)object)->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
+	SH3SceneObject_* sObject = (SH3SceneObject_*)object;
+
+	for (auto& c : sObject->components)
+		if (c.componentType == componentId)
+			return true;
+
+	return false;
+}
+
 H3_CAPI void H3_Object_EnablePhysics(H3Handle object, SH3ColliderDesc desc)
 {
 	H3_Object_EnablePhysicsEx(object, &desc, 1);
@@ -728,7 +741,7 @@ H3_CAPI void H3_Object_EnablePhysicsEx(H3Handle object, SH3ColliderDesc* descLis
 	if (sObject->physicsBody)
 		sObject->physicsBody->SetEnabled(true);
 	else
-		sObject->physicsBody = H3Internal_CreateAndAddPhysicsBody(sObject->scene->physicsWorld, 0.0f, 0.0f, descList, numShapes, sObject->scene->physicsLocksRotation);
+		sObject->physicsBody = H3Internal_CreateAndAddPhysicsBody(sObject->scene->physicsWorld, 0.0f, 0.0f, descList, numShapes, sObject->scene->physicsLocksRotation, sObject);
 
 	sObject->physicsEnabled = true;
 }
@@ -978,7 +991,7 @@ H3_CAPI void H3_Map_RegisterObjectLayerForPhysicsInScene(H3Handle scene, H3Handl
 		}
 
 		if (colliders.size() > 0)
-			H3Internal_CreateAndAddPhysicsBody(scn->physicsWorld, 0.0f, 0.0f, &colliders[0], colliders.size(), true);
+			H3Internal_CreateAndAddPhysicsBody(scn->physicsWorld, 0.0f, 0.0f, &colliders[0], colliders.size(), true, nullptr);
 	}
 }
 
@@ -1309,6 +1322,7 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 		H3_ASSERT(((SH3ObjectBase_*)scene)->type == EH3TypeInternal::Scene, "Handle type mismatch");
 
 		SH3Scene_* scn = (SH3Scene_*)scene;
+		scn->processing = true;
 
 		for (auto [_, o] : scn->allObjects)
 		{ // Init components in object at first use
@@ -1330,9 +1344,6 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 		{ // Update physics and transforms
 			if (scn->physicsWorld)
 				scn->physicsWorld->Step(dt.asSeconds(), 6, 2);
-
-			for (auto o : scn->rootObjects)
-				H3Internal_UpdateObjectRecursive(h3, o, t.asSeconds(), dt.asSeconds(), &noTransform, 0);
 
 			std::function<void(SH3SceneObject_*, sf::Transform)> UpdateGlobalTransformRecursive;
 			UpdateGlobalTransformRecursive = [&](SH3SceneObject_* o, sf::Transform parentTransform)
@@ -1361,7 +1372,12 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 
 				UpdateGlobalTransformRecursive(o, noTransform);
 			}
+
+			for (auto o : scn->rootObjects)
+				H3Internal_UpdateObjectRecursive(h3, o, t.asSeconds(), dt.asSeconds(), &noTransform, 0);
 		}
+
+		scn->processing = false;
 	}
 
 	sf::RenderWindow* window = (sf::RenderWindow*)h3;
@@ -1417,6 +1433,22 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 
 	{ // Swap buffers
 		window->display();
+	}
+
+	{ // Handle deferred object additions and deletions
+		if (scene)
+		{
+			SH3Scene_* scn = (SH3Scene_*)scene;
+			for (auto& [sObjName, obj] : scn->deferredAdditions)
+				H3Internal_AddObjectToScene(obj, sObjName, scn);
+
+			scn->deferredAdditions.clear();
+		
+			for (auto& [toDel, recursive] : scn->deferredDeletions)
+				H3Internal_DestroyObject(toDel, recursive);
+
+			scn->deferredDeletions.clear();
+		}
 	}
 	
 	{ // Poll inputs
@@ -1492,6 +1524,24 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 }
 
 // ============================================================================
+
+void H3Internal_AddObjectToScene(SH3SceneObject_* object, const std::string& sObjName, SH3Scene_* scene)
+{
+	scene->allObjects[sObjName] = object;
+	scene->objectNames[object] = sObjName;
+	scene->objectsByRenderOrder[0].push_back(object);
+
+	if (object->parent)
+	{
+		H3_ASSERT(H3Internal_SceneOwnsObject(scene, object->parent), "Handle type mismatch");
+
+		SH3SceneObject_* oParent = (SH3SceneObject_*)object->parent;
+		object->parent = oParent;
+		oParent->children.push_back(object);
+	}
+	else
+		scene->rootObjects.push_back(object);
+}
 
 void H3Internal_UpdateObjectRecursive(H3Handle h3, SH3SceneObject_* object, float t, float dt, sf::Transform* globalTransform, uint32_t componentTypeFlag)
 {
@@ -1576,7 +1626,8 @@ bool H3Internal_ObjectOwnsObject(H3Handle needle, H3Handle haystack)
 void H3Internal_DestroyObject(SH3SceneObject_* object, bool recursive)
 {
 	for (auto& c : object->components)
-		c.Terminate(c.properties);
+		if (c.Terminate)
+			c.Terminate(c.properties);
 
 	if (recursive)
 	{ // Delete this object's children
@@ -1609,6 +1660,17 @@ void H3Internal_DestroyObject(SH3SceneObject_* object, bool recursive)
 	{ // Remove object from the global scene list
 		object->scene->allObjects.erase(object->scene->objectNames[object]);
 		object->scene->objectNames.erase(object);
+	}
+
+	{ // Remove object from its render ordered list
+		auto& renderOrderedList = object->scene->objectsByRenderOrder[object->renderOrder];
+		auto it = std::find(renderOrderedList.begin(), renderOrderedList.end(), object);
+		renderOrderedList.erase(it);
+	}
+
+	if (object->physicsEnabled)
+	{
+		object->scene->physicsWorld->DestroyBody(object->physicsBody);
 	}
 
 	delete object;
@@ -1665,7 +1727,7 @@ b2Shape* H3Internal_MakePhysicsShape(const SH3ColliderDesc& desc)
 	return shape;
 }
 
-b2Body* H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, SH3ColliderDesc* descList, uint32_t numShapes, bool rotationLocked)
+b2Body* H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, SH3ColliderDesc* descList, uint32_t numShapes, bool rotationLocked, void* userData)
 {
 	b2BodyDef bodyDef;
 	bodyDef.type = [](EH3ColliderDynamicsType type) {
@@ -1679,6 +1741,7 @@ b2Body* H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, S
 
 	bodyDef.position.Set(px, py);
 	bodyDef.fixedRotation = rotationLocked ? (descList[0].dynamicsType == CDT_Dynamic) : false;
+	bodyDef.userData.pointer = (uintptr_t)userData;
 	b2Body* result = world->CreateBody(&bodyDef);
 
 	for (uint32_t i = 0; i < numShapes; ++i)

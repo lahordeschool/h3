@@ -193,6 +193,7 @@ void                   H3_Object_SetScale(H3Handle object, float s);
 void                   H3_Object_ScaleNonUniform(H3Handle object, float x, float y);
 void                   H3_Object_AddComponent(H3Handle object, SH3Component component);
 SH3Component*          H3_Object_GetComponent(H3Handle object, uint32_t componentId);
+bool                   H3_Object_HasComponent(H3Handle object, uint32_t componentId);
 void                   H3_Object_EnablePhysics(H3Handle object, SH3ColliderDesc desc);
 void                   H3_Object_EnablePhysicsEx(H3Handle object, SH3ColliderDesc* descList, uint32_t numShapes);
 void                   H3_Object_DisablePhysics(H3Handle object);
