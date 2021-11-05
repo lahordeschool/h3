@@ -172,11 +172,11 @@ bool                   H3_Input_IsMouseBtnDown(EH3MouseButton btn);
 bool                   H3_Input_IsMouseBtnPressed(EH3MouseButton btn);
 
 H3Handle               H3_Scene_Create(H3Handle h3, bool physicsLocksRotation);
-void                   H3_Scene_Destroy(H3Handle* scene);
+void                   H3_Scene_Destroy(H3Handle scene);
 void                   H3_Scene_SetGravity(H3Handle scene, float x, float y);
 
 H3Handle               H3_Object_Create(H3Handle scene, const char* objName, H3Handle parent);
-void                   H3_Object_Destroy(H3Handle* object, bool recursive);
+void                   H3_Object_Destroy(H3Handle object, bool recursive);
 H3Handle               H3_Object_Get(H3Handle scene, const char* objName);
 void                   H3_Object_SetEnabled(H3Handle object, bool enabled);
 bool                   H3_Object_GetEnabled(H3Handle object);

@@ -415,9 +415,9 @@ H3_CAPI H3Handle H3_Scene_Create(H3Handle h3, bool physicsLocksRotation)
 	return scn;
 }
 
-H3_CAPI void H3_Scene_Destroy(H3Handle* scene)
+H3_CAPI void H3_Scene_Destroy(H3Handle scene)
 {
-	SH3Scene_* scn = (SH3Scene_*)(*scene);
+	SH3Scene_* scn = (SH3Scene_*)scene;
 	H3_ASSERT(scn->type == EH3TypeInternal::Scene, "Handle type mismatch");
 	
 	for (auto& [_, a] : scn->allObjects)
@@ -428,7 +428,6 @@ H3_CAPI void H3_Scene_Destroy(H3Handle* scene)
 	delete scn->physicsWorld;
 
 	delete scn;
-	scene = nullptr;
 }
 
 H3_CAPI void H3_Scene_SetGravity(H3Handle scene, float x, float y)
@@ -467,19 +466,16 @@ H3_CAPI H3Handle H3_Object_Create(H3Handle scene, const char* objName, H3Handle 
 	return obj;
 }
 
-H3_CAPI void H3_Object_Destroy(H3Handle* object, bool recursive)
+H3_CAPI void H3_Object_Destroy(H3Handle object, bool recursive)
 {
 	H3_ASSERT(object, "object must not be NULL");
-	H3_ASSERT(*object, "Object pointed by object must not be NULL");
-	H3_ASSERT(((SH3ObjectBase_*)(*object))->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
-	SH3SceneObject_* sObject = (SH3SceneObject_*)(*object);
+	H3_ASSERT(((SH3ObjectBase_*)object)->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
+	SH3SceneObject_* sObject = (SH3SceneObject_*)object;
 
 	if (!sObject->scene->processing)
 		H3Internal_DestroyObject(sObject, recursive);
 	else
 		sObject->scene->deferredDeletions.push_back(std::make_pair(sObject, recursive));
-	
-	*object = nullptr;
 }
 
 H3_CAPI H3Handle H3_Object_Get(H3Handle scene, const char* objName)
@@ -1451,8 +1447,9 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 			scn->deferredAdditions.clear();
 		
 			for (auto& [toDel, recursive] : scn->deferredDeletions)
+			{
 				H3Internal_DestroyObject(toDel, recursive);
-
+			}
 			scn->deferredDeletions.clear();
 		}
 	}
