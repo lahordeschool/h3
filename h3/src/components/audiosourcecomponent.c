@@ -29,7 +29,7 @@ void* AudioSourceComponent_CreateProperties(H3Handle source)
 	return properties;
 }
 
-void AudioSourceComponent_Play(H3Handle handle, bool loop)
+void AudioSourceComponent_Play(H3Handle handle, float volume, bool loop)
 {
 	SH3Transform* xform = H3_Object_GetTransform(handle);
 
@@ -41,7 +41,7 @@ void AudioSourceComponent_Play(H3Handle handle, bool loop)
 
 		float x, y;
 		H3_Transform_GetPosition(xform, &x, &y);
-		H3_Sound_PlaySpatialized(props->Source, 1.0f, x, y, loop);
+		H3_Sound_PlaySpatialized(props->Source, volume, x, y, loop);
 	}
 	else
 		H3_ASSERT_CONSOLE(false, "This object has no such component");

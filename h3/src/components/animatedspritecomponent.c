@@ -14,6 +14,8 @@ typedef struct
 
 	uint32_t         curFrame;
 	float            curFrameTime;
+	bool             loop;
+	bool             isAnimOver;
 } AnimatedSpriteComponent_Properties;
 
 void AnimatedSpriteComponent_Terminate(void* properties)
@@ -34,7 +36,19 @@ void AnimatedSpriteComponent_Update(H3Handle h3, H3Handle object, SH3Transform* 
 
 	while (props->curFrameTime >= props->FrameDuration)
 	{
-		props->curFrame = (props->curFrame + 1) % props->NumFrames;
+		props->curFrame++;
+		
+		if (props->loop)
+			props->curFrame = props->curFrame % props->NumFrames;
+		else
+		{
+			if (props->curFrame >= props->NumFrames)
+			{
+				props->curFrame = props->NumFrames - 1;
+				props->isAnimOver = true;
+			}
+		}
+
 		props->curFrameTime -= props->FrameDuration;
 	}
 }
@@ -70,7 +84,7 @@ void AnimatedSpriteComponent_Draw(H3Handle h3, SH3Transform* transform, void* pr
 	);
 }
 
-void* AnimatedSpriteComponent_CreateProperties(const char* texturePath, uint8_t anchor, uint32_t numFrames, float frameDuration)
+void* AnimatedSpriteComponent_CreateProperties(const char* texturePath, uint8_t anchor, uint32_t numFrames, float frameDuration, bool loop)
 {
 	AnimatedSpriteComponent_Properties* properties = malloc(sizeof(AnimatedSpriteComponent_Properties));
 	H3_ASSERT_CONSOLE(properties, "Failed to allocate properties");
@@ -83,10 +97,30 @@ void* AnimatedSpriteComponent_CreateProperties(const char* texturePath, uint8_t 
 
 	properties->curFrame = 0;
 	properties->curFrameTime = 0.0f;
+	properties->loop = loop;
+	properties->isAnimOver = false;
 
 	properties->FlipX = properties->FlipY = false;
 
 	return properties;
+}
+
+void AnimatedSpriteComponent_ResetAnimation(H3Handle object)
+{
+	void* properties = H3_Object_GetComponent(object, ANIMATEDSPRITECOMPONENT_TYPEID)->properties;
+	AnimatedSpriteComponent_Properties* props = (AnimatedSpriteComponent_Properties*)properties;
+
+	props->curFrame = 0;
+	props->curFrameTime = 0.0f;
+	props->isAnimOver = false;
+}
+
+bool AnimatedSpriteComponent_IsAnimOver(H3Handle object)
+{
+	void* properties = H3_Object_GetComponent(object, ANIMATEDSPRITECOMPONENT_TYPEID)->properties;
+	AnimatedSpriteComponent_Properties* props = (AnimatedSpriteComponent_Properties*)properties;
+
+	return props->isAnimOver;
 }
 
 H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RO(AnimatedSpriteComponent, H3Handle,  Texture);

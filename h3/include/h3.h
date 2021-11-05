@@ -127,6 +127,7 @@ typedef struct
 	void  (*Init)(SH3Transform*, void**);
 	void  (*Terminate)(void*);
 	void  (*Update)(H3Handle, H3Handle, SH3Transform*, float /* t */, float /* dt */, void*);
+	void  (*PreUpdate)(H3Handle, H3Handle, SH3Transform*, float /* t */, float /* dt */, void*);
 	void  (*Draw)(H3Handle, SH3Transform*, void*);
 
 	void (*OnCollisionEnter)(H3Handle, SH3Collision);

@@ -302,6 +302,7 @@ bool      gPreviousMouseButtonStates[EH3MouseButton_Count] = { false };
 // ============================================================================
 
 void H3Internal_AddObjectToScene(SH3SceneObject_* object, const std::string& sObjName, SH3Scene_* scene);
+void H3Internal_PreUpdateObjectRecursive(H3Handle h3, SH3SceneObject_* object, float t, float dt, sf::Transform* globalTransform, uint32_t componentTypeFlag);
 void H3Internal_UpdateObjectRecursive(H3Handle h3, SH3SceneObject_* object, float t, float dt, sf::Transform* globalTransform, uint32_t componentTypeFlag);
 void H3Internal_RenderObjectRecursive(H3Handle h3, SH3SceneObject_* object, sf::Transform* globalTransform);
 void H3Internal_RenderObjectRecursiveWithRenderOrder(H3Handle h3, SH3SceneObject_* object, sf::Transform* globalTransform, int32_t renderOrder);
@@ -1342,6 +1343,10 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 		}
 		
 		{ // Update physics and transforms
+
+			for (auto o : scn->rootObjects)
+				H3Internal_PreUpdateObjectRecursive(h3, o, t.asSeconds(), dt.asSeconds(), &noTransform, 0);
+
 			if (scn->physicsWorld)
 				scn->physicsWorld->Step(dt.asSeconds(), 6, 2);
 
@@ -1377,7 +1382,6 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 				H3Internal_UpdateObjectRecursive(h3, o, t.asSeconds(), dt.asSeconds(), &noTransform, 0);
 		}
 
-		scn->processing = false;
 	}
 
 	sf::RenderWindow* window = (sf::RenderWindow*)h3;
@@ -1422,6 +1426,8 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 #ifdef H3_DEBUG_DRAW_PHYSICS
 		scn->physicsWorld->DebugDraw();
 #endif  /* H3_DEBUG_DRAW_PHYSICS */
+
+		scn->processing = false;
 	}
 
 	H3Internal_HandleAssertPopup();
@@ -1562,6 +1568,27 @@ void H3Internal_UpdateObjectRecursive(H3Handle h3, SH3SceneObject_* object, floa
 
 	for (auto c : object->children)
 		H3Internal_UpdateObjectRecursive(h3, c, t, dt, &xform, componentTypeFlag);
+}
+
+void H3Internal_PreUpdateObjectRecursive(H3Handle h3, SH3SceneObject_* object, float t, float dt, sf::Transform* globalTransform, uint32_t componentTypeFlag)
+{
+	if (!object->enabled)
+		return;
+
+	sf::Transform xform = (*globalTransform) * object->transform;
+
+	for (auto& c : object->components)
+	{
+		bool processUpdate = true;
+		if (componentTypeFlag)
+			processUpdate = (c.componentType & componentTypeFlag);
+
+		if (c.PreUpdate && processUpdate)
+			c.PreUpdate(h3, object, &xform, t, dt, c.properties);
+	}
+
+	for (auto c : object->children)
+		H3Internal_PreUpdateObjectRecursive(h3, c, t, dt, &xform, componentTypeFlag);
 }
 
 void H3Internal_RenderObjectRecursive(H3Handle h3, SH3SceneObject_* object, sf::Transform* globalTransform)
