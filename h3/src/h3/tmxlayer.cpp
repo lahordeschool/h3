@@ -74,8 +74,8 @@ void CH3TmxLayerChunk::generateTiles(bool registerAnimation)
 
                     auto idIndex = m_chunkTileIDs[idx].ID - ca->m_firstGID;
                     sf::Vector2f tileIndex(idIndex % ca->tsTileCount.x, idIndex / ca->tsTileCount.x);
-                    tileIndex.x *= ca->tileSetSize.x + 1.0f;
-                    tileIndex.y *= ca->tileSetSize.y + 1.0f;
+                    tileIndex.x *= ca->tileSetSize.x;
+                    tileIndex.y *= ca->tileSetSize.y;
                     Tile tile =
                     {
                         sf::Vertex(tileOffset - getPosition(), m_chunkColors[idx], tileIndex),
