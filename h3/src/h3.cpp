@@ -451,7 +451,7 @@ H3_CAPI H3Handle H3_Object_Create(H3Handle scene, const char* objName, H3Handle 
 
 	SH3SceneObject_* obj = new SH3SceneObject_;
 	obj->scene = scn;
-	obj->parent = nullptr;
+	obj->parent = (SH3SceneObject_*)parent;
 	obj->renderOrder = 0;
 	obj->physicsBody = nullptr;
 	obj->enabled = true;

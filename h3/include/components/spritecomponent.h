@@ -16,9 +16,7 @@ H3_CAPI_END_BLOCK
 
 #define SPRITECOMPONENT_CREATE(TEXTURE, ANCHOR)                                          \
 	(SH3Component) {                                                            \
-		.Init               = NULL,                                                      \
 		.Terminate          = SpriteComponent_Terminate,                                 \
-		.Update             = NULL,                                                      \
 		.Draw               = SpriteComponent_Draw,                                      \
 		.isInitialized      = false,                                                     \
 		.componentType      = SPRITECOMPONENT_TYPEID,                                    \
