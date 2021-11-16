@@ -696,6 +696,28 @@ H3_CAPI void H3_Object_AddComponent(H3Handle object, SH3Component component)
 		sObject->components.push_back(component);
  }
 
+H3_CAPI bool H3_Object_RemoveComponent(H3Handle object, uint32_t componentId)
+{
+	H3_ASSERT(object, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)object)->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
+	SH3SceneObject_* sObject = (SH3SceneObject_*)object;
+
+	auto it = sObject->components.begin();
+	for (; it != sObject->components.end(); it++)
+	{
+		if (it->componentType == componentId)
+			break;
+	}
+
+	if (it != sObject->components.end())
+	{
+		sObject->components.erase(it);
+		return true;
+	}
+
+	return false;
+}
+
 H3_CAPI SH3Component* H3_Object_GetComponent(H3Handle object, uint32_t componentId)
 {
 	H3_ASSERT(object, "object must not be NULL");
@@ -803,14 +825,12 @@ H3_CAPI H3Handle H3_Texture_Load(const char* path, uint32_t* width, uint32_t* he
 	return tex;
 }
 
-H3_CAPI void H3_Texture_Destroy(H3Handle* handle)
+H3_CAPI void H3_Texture_Destroy(H3Handle handle)
 {
 	H3_ASSERT_CONSOLE(handle, "handle must not be NULL");
-	H3_ASSERT_CONSOLE(*handle, "object pointed by handle must not be NULL");
 
-	sf::Texture* tex = (sf::Texture*)(*handle);
+	sf::Texture* tex = (sf::Texture*)handle;
 	delete tex;
-	*handle = nullptr;
 }
 
 H3_CAPI void H3_Texture_Draw(H3Handle h3, float px, float py, H3Handle texture, EH3Anchor anchor)
@@ -1045,16 +1065,14 @@ H3_CAPI H3Handle H3_Sound_Load(const char* path)
 	return sound;
 }
 
-H3_CAPI void H3_Sound_Destroy(H3Handle* snd)
+H3_CAPI void H3_Sound_Destroy(H3Handle snd)
 {
 	H3_ASSERT(snd, "snd cannot be NULL");
-	H3_ASSERT(*snd, "object pointed by snd cannot be NULL");
-	H3_ASSERT(((SH3ObjectBase_*)(*snd))->type == EH3TypeInternal::Sound, "Handle type mismatch");
+	H3_ASSERT(((SH3ObjectBase_*)(snd))->type == EH3TypeInternal::Sound, "Handle type mismatch");
 
-	SH3Sound_* sound = (SH3Sound_*)(*snd);
+	SH3Sound_* sound = (SH3Sound_*)snd;
 
 	delete sound;
-	snd = nullptr;
 }
 
 H3_CAPI void H3_Sound_Play(H3Handle snd, float volume, bool loop)
@@ -1129,18 +1147,13 @@ H3_CAPI H3Handle H3_Music_Load(const char* path)
 	return music;
 }
 
-H3_CAPI void H3_Music_Destroy(H3Handle* music)
+H3_CAPI void H3_Music_Destroy(H3Handle handle)
 {
-	H3_ASSERT(music, "music cannot be NULL");
-	H3_ASSERT(*music, "object pointed by music cannot be NULL");
+	H3_ASSERT(handle, "music cannot be NULL");
+	H3_Music_Stop(handle);
 
-	H3Handle hnd = *music;
-
-	H3_Music_Stop(hnd);
-
-	sf::Music* msc = (sf::Music*)(*music);
+	sf::Music* msc = (sf::Music*)handle;
 	delete msc;
-	*music = nullptr;
 }
 
 H3_CAPI void H3_Music_Play(H3Handle music, float volume, bool loop)
@@ -1171,11 +1184,10 @@ H3_CAPI H3Handle H3_Font_Load(const char* path)
 	return font;
 }
 
-H3_CAPI void H3_Font_Destroy(H3Handle* font)
+H3_CAPI void H3_Font_Destroy(H3Handle font)
 {
-	sf::Font* f = (sf::Font*)(*font);
+	sf::Font* f = (sf::Font*)font;
 	delete f;
-	*font = nullptr;
 }
 
 H3_CAPI void H3_Font_Printf(H3Handle h3, SH3TextProperties properties, SH3Transform* transform, const char* format, ...)
