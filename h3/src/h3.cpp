@@ -473,7 +473,21 @@ H3_CAPI void H3_Object_Destroy(H3Handle object, bool recursive)
 	if (!sObject->scene->processing)
 		H3Internal_DestroyObject(sObject, recursive);
 	else
-		sObject->scene->deferredDeletions.push_back(std::make_pair(sObject, recursive));
+	{
+		bool deletionAlreadyPending = false;
+
+		for (auto& a : sObject->scene->deferredDeletions)
+		{
+			if (a.first == sObject)
+			{
+				deletionAlreadyPending = true;
+				break;
+			}
+		}
+
+		if (!deletionAlreadyPending)
+			sObject->scene->deferredDeletions.push_back(std::make_pair(sObject, recursive));
+	}
 }
 
 H3_CAPI H3Handle H3_Object_Get(H3Handle scene, const char* objName)

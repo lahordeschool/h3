@@ -23,7 +23,7 @@ void AnimatedSpriteComponent_Terminate(void* properties)
 	AnimatedSpriteComponent_Properties* props = (AnimatedSpriteComponent_Properties*)properties;
 
 	if (props->Texture)
-		H3_Texture_Destroy(&props->Texture);
+		H3_Texture_Destroy(props->Texture);
 
 	free(properties);
 }

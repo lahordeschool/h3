@@ -13,7 +13,7 @@ void SpriteComponent_Terminate(void* properties)
 	SpriteComponent_Properties* props = (SpriteComponent_Properties*)properties;
 
 	if (props->Texture)
-		H3_Texture_Destroy(&props->Texture);
+		H3_Texture_Destroy(props->Texture);
 
 	free(properties);
 }
