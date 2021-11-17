@@ -179,22 +179,22 @@ typedef struct
 typedef struct
 {
 	// Default component callbacks
-	void  (*Init)(SH3Transform*, void**);                                                         //!< Called when the object is first used
-	void  (*Terminate)(void*);                                                                    //!< Called when the object is destroyed
-	void  (*Update)(H3Handle, H3Handle, SH3Transform*, float /* t */, float /* dt */, void*);     //!< Called on each frame, after the physics update
-	void  (*PreUpdate)(H3Handle, H3Handle, SH3Transform*, float /* t */, float /* dt */, void*);  //!< Called on each frame, before the physics update
-	void  (*Draw)(H3Handle, SH3Transform*, void*);                                                //!< Called on each frame, after all is updated. Used to actually draw to screen.
+	void  (*Init)(SH3Transform* /* transform */, void** /* propertiesPtr */);                                                                           //!< Called when the object is first used
+	void  (*Terminate)(void* /* properties */);                                                                                                         //!< Called when the object is destroyed
+	void  (*Update)(H3Handle /* h3 */, H3Handle /* object */, SH3Transform* /* transform */, float /* t */, float /* dt */, void* /* properties */);    //!< Called on each frame, after the physics update
+	void  (*PreUpdate)(H3Handle /* h3 */, H3Handle /* object */, SH3Transform* /* transform */, float /* t */, float /* dt */, void* /* properties */); //!< Called on each frame, before the physics update
+	void  (*Draw)(H3Handle /* h3 */, SH3Transform* /* transform */, void* /* properties */);                                                            //!< Called on each frame, after all is updated. Used to actually draw to screen.
 
 	// Physics callbacks are called BETWEEN PreUpdate and Update.
 
-	void (*OnCollisionEnter)(H3Handle, SH3Collision);                                             //!< Called when this object starts to interact with another.
-	void (*OnCollisionLeave)(H3Handle, H3Handle);                                                 //!< Called when this object ceases to interact with another.
-	void (*OnTriggerEnter)(H3Handle, SH3Collision);                                               //!< Called when this object starts to interact with another (that is a trigger).
-	void (*OnTriggerLeave)(H3Handle, H3Handle);                                                   //!< Called when this object ceases to interact with another (that is a trigger).
+	void (*OnCollisionEnter)(H3Handle /* self */, SH3Collision /* collision */);                                                                        //!< Called when this object starts to interact with another.
+	void (*OnCollisionLeave)(H3Handle /* self */, H3Handle /* other */);                                                                                //!< Called when this object ceases to interact with another.
+	void (*OnTriggerEnter)(H3Handle /* self */, SH3Collision /* collision */);                                                                          //!< Called when this object starts to interact with another (that is a trigger).
+	void (*OnTriggerLeave)(H3Handle /* self */, H3Handle /* other */);                                                                                  //!< Called when this object ceases to interact with another (that is a trigger).
 
-	bool     isInitialized;                                                                       //!< Whether this component's Init() function has been called
-	uint32_t componentType;                                                                       //!< This component's type (see "..._TYPEID")
-	void*    properties;                                                                          //!< This component's properties as an opaque pointer
+	bool     isInitialized;                                                                                                                             //!< Whether this component's Init() function has been called
+	uint32_t componentType;                                                                                                                             //!< This component's type (see "..._TYPEID")
+	void*    properties;                                                                                                                                //!< This component's properties as an opaque pointer
 } SH3Component;
 
 /**
@@ -796,5 +796,19 @@ H3_CAPI_END_BLOCK
 
 #define H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RO(C, T, N) \
 	T C##_Get##N(void* properties) { return ((C##_Properties*)properties)->N; }
+
+#define H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW_EX(C, T, N) \
+	T C##_Get##N##Ex(H3Handle object); \
+	void C##_Set##N##Ex(H3Handle object, T value);
+
+#define H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO_EX(C, T, N) \
+	T C##_Get##N##Ex(H3Handle object);
+
+#define H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RW_EX(C, ID, T, N) \
+	T C##_Get##N##Ex(H3Handle object) { return ((C##_Properties*)(H3_Object_GetComponent(object, ID)->properties))->N; } \
+	void C##_Set##N##Ex(H3Handle object, T value) { ((C##_Properties*)(H3_Object_GetComponent(object, ID)->properties))->N = value; }
+
+#define H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RO_EX(C, ID, T, N) \
+	T C##_Get##N##Ex(H3Handle object) { return ((C##_Properties*)(H3_Object_GetComponent(object, ID)->properties))->N; }
 
 #endif /* _H3_H_ */

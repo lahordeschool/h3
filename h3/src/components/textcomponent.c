@@ -28,5 +28,8 @@ void* TextComponent_CreateProperties(const char* text, SH3TextProperties props)
 	return properties;
 }
 
+#define CURRENT_COMPONENT_TYPEID TEXTCOMPONENT_TYPEID
 H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RW(TextComponent, const char*, Text);
 H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RO(TextComponent, SH3TextProperties, Props);
+H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RW_EX(TextComponent, TEXTCOMPONENT_TYPEID, const char*, Text);
+H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RO_EX(TextComponent, TEXTCOMPONENT_TYPEID, SH3TextProperties, Props);

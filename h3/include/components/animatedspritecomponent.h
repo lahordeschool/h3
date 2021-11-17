@@ -15,12 +15,19 @@ void* AnimatedSpriteComponent_CreateProperties(const char* texturePath, uint8_t 
 void AnimatedSpriteComponent_ResetAnimation(H3Handle object);
 bool AnimatedSpriteComponent_IsAnimOver(H3Handle object);
 
-H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO(AnimatedSpriteComponent, H3Handle,         Texture);
-H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW(AnimatedSpriteComponent, EH3Anchor,        Anchor);
-H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO(AnimatedSpriteComponent, uint32_t,         NumFrames);
-H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO(AnimatedSpriteComponent, float,            FrameDuration);
-H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW(AnimatedSpriteComponent, bool,             FlipX);
-H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW(AnimatedSpriteComponent, bool,             FlipY);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO(AnimatedSpriteComponent, H3Handle,  Texture);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW(AnimatedSpriteComponent, EH3Anchor, Anchor);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO(AnimatedSpriteComponent, uint32_t,  NumFrames);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO(AnimatedSpriteComponent, float,     FrameDuration);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW(AnimatedSpriteComponent, bool,      FlipX);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW(AnimatedSpriteComponent, bool,      FlipY);
+
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO_EX(AnimatedSpriteComponent, H3Handle,  Texture);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW_EX(AnimatedSpriteComponent, EH3Anchor, Anchor);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO_EX(AnimatedSpriteComponent, uint32_t,  NumFrames);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO_EX(AnimatedSpriteComponent, float,     FrameDuration);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW_EX(AnimatedSpriteComponent, bool,      FlipX);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW_EX(AnimatedSpriteComponent, bool,      FlipY);
 H3_CAPI_END_BLOCK
 
 #define ANIMATEDSPRITECOMPONENT_CREATE(TEXTURE, ANCHOR, NFRAMES, FRAMEDURATION, LOOP)                                          \

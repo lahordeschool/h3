@@ -87,9 +87,6 @@
     <ClCompile Include="src\components\audiosourcecomponent.c">
       <Filter>Source Files\components</Filter>
     </ClCompile>
-    <ClCompile Include="include\components\rectanglecollidercomponent.c">
-      <Filter>Source Files\components</Filter>
-    </ClCompile>
     <ClCompile Include="src\components\textcomponent.c">
       <Filter>Source Files\components</Filter>
     </ClCompile>
@@ -147,9 +144,6 @@
       <Filter>Header Files\components</Filter>
     </ClInclude>
     <ClInclude Include="include\components\audiosourcecomponent.h">
-      <Filter>Header Files\components</Filter>
-    </ClInclude>
-    <ClInclude Include="include\components\rectanglecollidercomponent.h">
       <Filter>Header Files\components</Filter>
     </ClInclude>
     <ClInclude Include="include\components\textcomponent.h">

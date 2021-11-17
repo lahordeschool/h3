@@ -32,3 +32,5 @@ void* CameraComponent_CreateProperties(float width, float height)
 
 H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RW(CameraComponent, float, Width);
 H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RW(CameraComponent, float, Height);
+H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RW_EX(CameraComponent, CAMERACOMPONENT_TYPEID, float, Width);
+H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RW_EX(CameraComponent, CAMERACOMPONENT_TYPEID, float, Height);

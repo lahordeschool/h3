@@ -2,8 +2,6 @@
 #include <h3/internal.h>
 #include <h3/tmxlayer.h>
 
-#include <components/rectanglecollidercomponent.h>
-
 #include <cassert>
 #include <cmath>
 #include <functional>

@@ -11,6 +11,7 @@ void MapLayerComponent_Draw(H3Handle h3, SH3Transform* transform, void* properti
 
 void* MapLayerComponent_CreateProperties(H3Handle map, const char* layerName);
 H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO(MapLayerComponent, H3Handle, Map);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO_EX(MapLayerComponent, H3Handle, Map);
 H3_CAPI_END_BLOCK
 
 #define MAPLAYERCOMPONENT_CREATE(MAP, LAYERNAME)                                 \

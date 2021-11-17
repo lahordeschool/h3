@@ -3,7 +3,7 @@
 
 #include <h3.h>
 
-#define SPRITECOMPONENT_TYPEID 0x00000001
+#define TEXTCOMPONENT_TYPEID 0x00000008
 
 H3_CAPI_BEGIN_BLOCK
 void TextComponent_Terminate(void* properties);
@@ -12,6 +12,8 @@ void TextComponent_Draw(H3Handle h3, SH3Transform* transform, void* properties);
 void* TextComponent_CreateProperties(const char* text, SH3TextProperties props);
 H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW(TextComponent, const char*, Text);
 H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO(TextComponent, SH3TextProperties, Props);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW_EX(TextComponent, const char*, Text);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO_EX(TextComponent, SH3TextProperties, Props);
 H3_CAPI_END_BLOCK
 
 #define TEXTCOMPONENT_CREATE(TEXT, PROPS)                                 \

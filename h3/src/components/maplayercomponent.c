@@ -27,6 +27,7 @@ void* MapLayerComponent_CreateProperties(H3Handle map, const char* layerName)
 	properties->LayerID = H3_Map_GetLayerFromName(map, layerName);
 	return properties;
 }
-
 H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RO(MapLayerComponent, H3Handle, Map);
-H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RO(MapLayerComponent, size_t,   LayerID);
+H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RO(MapLayerComponent, size_t, LayerID);
+H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RO_EX(MapLayerComponent, MAPLAYERCOMPONENT_TYPEID, H3Handle, Map);
+H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RO_EX(MapLayerComponent, MAPLAYERCOMPONENT_TYPEID, size_t, LayerID);

@@ -12,6 +12,8 @@ void SpriteComponent_Draw(H3Handle h3, SH3Transform* transform, void* properties
 void* SpriteComponent_CreateProperties(const char* texturePath, uint8_t anchor);
 H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO(SpriteComponent, H3Handle, Texture);
 H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW(SpriteComponent, EH3Anchor, Anchor);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO_EX(SpriteComponent, H3Handle, Texture);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW_EX(SpriteComponent, EH3Anchor, Anchor);
 H3_CAPI_END_BLOCK
 
 #define SPRITECOMPONENT_CREATE(TEXTURE, ANCHOR)                                          \

@@ -167,7 +167,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="include\components\rectanglecollidercomponent.c" />
     <ClCompile Include="src\components\animatedspritecomponent.c" />
     <ClCompile Include="src\components\audiosourcecomponent.c" />
     <ClCompile Include="src\components\cameracomponent.c" />
@@ -192,7 +191,6 @@
     <ClInclude Include="include\components\cameracomponent.h" />
     <ClInclude Include="include\components\textcomponent.h" />
     <ClInclude Include="include\components\maplayercomponent.h" />
-    <ClInclude Include="include\components\rectanglecollidercomponent.h" />
     <ClInclude Include="include\components\spritecomponent.h" />
     <ClInclude Include="include\h3.h" />
     <ClInclude Include="include\h3\common.h" />

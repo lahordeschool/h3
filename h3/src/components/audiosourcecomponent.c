@@ -61,3 +61,4 @@ void AudioSourceComponent_Stop(H3Handle handle)
 }
 
 H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RW(AudioSourceComponent, H3Handle, Source);
+H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RW_EX(AudioSourceComponent, AUDIOSOURCECOMPONENT_TYPEID, H3Handle, Source);

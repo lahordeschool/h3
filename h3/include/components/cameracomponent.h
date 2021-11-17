@@ -13,6 +13,8 @@ void* CameraComponent_CreateProperties(float width, float height);
 
 H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW(CameraComponent, float, Width);
 H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW(CameraComponent, float, Height);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW_EX(CameraComponent, float, Width);
+H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW_EX(CameraComponent, float, Height);
 H3_CAPI_END_BLOCK
 
 #define CAMERACOMPONENT_CREATE(W, H)                                 \
