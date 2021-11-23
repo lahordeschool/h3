@@ -485,6 +485,20 @@ void H3_Object_EnablePhysicsEx(H3Handle object, SH3ColliderDesc* descList, uint3
 void H3_Object_DisablePhysics(H3Handle object);
 
 /**
+ * \brief Retrieves an object's linear damping (how much it slows down). Only valid if this object has physics enabled.
+ * \param object The object to get the linear damping from
+ * \return The damping
+ */
+float H3_Object_GetLinearDamping(H3Handle object);
+
+/**
+ * \brief Sets an object's linear damping (how much it slows down). Only valid if this object has physics enabled.
+ * \param object The object to set the linear damping of
+ * \param v      the damping
+ */
+void H3_Object_SetLinearDamping(H3Handle object, float v);
+
+/**
  * \brief Retrieves an object's linear velocity. Only valid if this object has physics enabled.
  * \param object The object to get the linear velocity from
  * \param vx     Pointer to the horizontal component of the velocity
@@ -507,6 +521,41 @@ void H3_Object_SetVelocity(H3Handle object, float vx, float vy);
  * \param vy     The vertical component of the velocity to add
  */
 void H3_Object_AddVelocity(H3Handle object, float vx, float vy);
+
+/**
+ * \brief Retrieves an object's angular damping (how much its rotation slows down). Only valid if this object has physics enabled.
+ * \param object The object to get the linear damping from
+ * \return The damping
+ */
+float H3_Object_GetAngularDamping(H3Handle object);
+
+/**
+ * \brief Sets an object's angular damping (how much its rotation slows down). Only valid if this object has physics enabled.
+ * \param object The object to set the linear damping of
+ * \param v      the damping
+ */
+void H3_Object_SetAngularDamping(H3Handle object, float v);
+
+/**
+ * \brief Retrieves an object's linear velocity. Only valid if this object has physics enabled.
+ * \param object The object to get the linear velocity from
+ * \return The angular velocity
+ */
+float H3_Object_GetAngularVelocity(H3Handle object);
+
+/**
+ * \brief Sets an object's linear velocity. Only valid if this object has physics enabled.
+ * \param object The object to set the linear velocity to
+ * \param vx     The velocity
+ */
+void H3_Object_SetAngularVelocity(H3Handle object, float v);
+
+/**
+ * \brief Add to an object's linear velocity. Only valid if this object has physics enabled.
+ * \param object The object to add the linear velocity to
+ * \param v      The horizontal component of the velocity to add
+ */
+void H3_Object_AddAngularVelocity(H3Handle object, float v);
 
 // ============================================================================
 

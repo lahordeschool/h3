@@ -787,6 +787,26 @@ H3_CAPI void H3_Object_DisablePhysics(H3Handle object)
 	sObject->physicsBody->SetEnabled(false);
 }
 
+H3_CAPI float H3_Object_GetLinearDamping(H3Handle object)
+{
+	H3_ASSERT(object, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)object)->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
+	SH3SceneObject_* sObject = (SH3SceneObject_*)object;
+
+	H3_ASSERT(sObject->physicsBody, "This object does not have physics enabled");
+	return sObject->physicsBody->GetLinearDamping();
+}
+
+H3_CAPI void H3_Object_SetLinearDamping(H3Handle object, float v)
+{
+	H3_ASSERT(object, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)object)->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
+	SH3SceneObject_* sObject = (SH3SceneObject_*)object;
+
+	H3_ASSERT(sObject->physicsBody, "This object does not have physics enabled");
+	sObject->physicsBody->SetLinearDamping(v);
+}
+
 H3_CAPI void H3_Object_GetVelocity(H3Handle object, float* vx, float* vy)
 {
 	H3_ASSERT(object, "object must not be NULL");
@@ -815,6 +835,51 @@ H3_CAPI void H3_Object_AddVelocity(H3Handle object, float vx, float vy)
 	float bx, by;
 	H3_Object_GetVelocity(object, &bx, &by);
 	H3_Object_SetVelocity(object, bx + vx, by + vy);
+}
+
+H3_CAPI float H3_Object_GetAngularDamping(H3Handle object)
+{
+	H3_ASSERT(object, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)object)->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
+	SH3SceneObject_* sObject = (SH3SceneObject_*)object;
+
+	H3_ASSERT(sObject->physicsBody, "This object does not have physics enabled");
+	return sObject->physicsBody->GetAngularDamping();
+}
+
+H3_CAPI void H3_Object_SetAngularDamping(H3Handle object, float v)
+{
+	H3_ASSERT(object, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)object)->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
+	SH3SceneObject_* sObject = (SH3SceneObject_*)object;
+
+	H3_ASSERT(sObject->physicsBody, "This object does not have physics enabled");
+	sObject->physicsBody->SetAngularDamping(v);
+}
+
+H3_CAPI float H3_Object_GetAngularVelocity(H3Handle object)
+{
+	H3_ASSERT(object, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)object)->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
+	SH3SceneObject_* sObject = (SH3SceneObject_*)object;
+
+	H3_ASSERT(sObject->physicsBody, "This object does not have physics enabled");
+	return sObject->physicsBody->GetAngularVelocity();
+}
+
+H3_CAPI void H3_Object_SetAngularVelocity(H3Handle object, float v)
+{
+	H3_ASSERT(object, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)object)->type == EH3TypeInternal::SceneObject, "Handle type mismatch");
+	SH3SceneObject_* sObject = (SH3SceneObject_*)object;
+
+	H3_ASSERT(sObject->physicsBody, "This object does not have physics enabled");
+	sObject->physicsBody->SetAngularVelocity(v);
+}
+
+H3_CAPI void H3_Object_AddAngularVelocity(H3Handle object, float v)
+{
+	H3_Object_SetAngularVelocity(object, H3_Object_GetAngularVelocity(object) + v);
 }
 
 H3_CAPI void H3_Transform_GetPosition(SH3Transform* transform, float* x, float* y)
