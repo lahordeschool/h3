@@ -218,7 +218,7 @@ public:
 		{
 			for (auto& c : oA->components)
 			{
-				if (contact->GetFixtureA()->IsSensor())
+				if (contact->GetFixtureB()->IsSensor())
 				{
 					if (c.OnTriggerEnter)
 						c.OnTriggerEnter(oA, collision);
@@ -237,7 +237,7 @@ public:
 		{
 			for (auto& c : oB->components)
 			{
-				if (contact->GetFixtureB()->IsSensor())
+				if (contact->GetFixtureA()->IsSensor())
 				{
 					if (c.OnTriggerEnter)
 						c.OnTriggerEnter(oB, collision);
@@ -260,7 +260,7 @@ public:
 		{
 			for (auto& c : oA->components)
 			{
-				if (contact->GetFixtureA()->IsSensor())
+				if (contact->GetFixtureB()->IsSensor())
 				{
 					if (c.OnTriggerLeave)
 						c.OnTriggerLeave(oA, oB);
@@ -277,7 +277,7 @@ public:
 		{
 			for (auto& c : oB->components)
 			{
-				if (contact->GetFixtureB()->IsSensor())
+				if (contact->GetFixtureA()->IsSensor())
 				{
 					if (c.OnTriggerLeave)
 						c.OnTriggerLeave(oB, oA);
@@ -1938,6 +1938,7 @@ b2Body* H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, S
 		b2Shape* shape = H3Internal_MakePhysicsShape(desc);
 
 		b2FixtureDef fixtureDef;
+		fixtureDef.isSensor = desc.isTrigger;
 		fixtureDef.shape = shape;
 		fixtureDef.density = 1.0f;
 		fixtureDef.friction = 0.3f;
