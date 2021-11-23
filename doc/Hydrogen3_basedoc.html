@@ -1,0 +1,3272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0105)file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a7481c022516df17b0021c7e886a6017f -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=11">
+<meta name="generator" content="Doxygen 1.9.2">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hydrogen3: h3/h3/include/h3.h File Reference</title>
+<link href="./Hydrogen3_basedoc_files/tabs.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./Hydrogen3_basedoc_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Hydrogen3_basedoc_files/dynsections.js.download"></script>
+<link href="./Hydrogen3_basedoc_files/search.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./Hydrogen3_basedoc_files/searchdata.js.download"></script>
+<script type="text/javascript" src="./Hydrogen3_basedoc_files/search.js.download"></script>
+<link href="./Hydrogen3_basedoc_files/doxygen.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!-- end header part -->
+<table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_init_params.html">SH3InitParams</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_collider_desc.html">SH3ColliderDesc</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_contact_point.html">SH3ContactPoint</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_collision.html">SH3Collision</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_component.html">SH3Component</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_text_properties.html">SH3TextProperties</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ab3e6136277ed43546eae3f2bf28402a8"><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ab3e6136277ed43546eae3f2bf28402a8">H3_COLLIDER_COMPONENT_FLAG</a>&nbsp;&nbsp;&nbsp;0x10000000</td></tr>
+<tr class="separator:ab3e6136277ed43546eae3f2bf28402a8"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a69dea4976032ab280b8616573214618b"><td class="memItemLeft" align="right" valign="top"><a id="a69dea4976032ab280b8616573214618b" name="a69dea4976032ab280b8616573214618b"></a>
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>H3_CUSTOM_BEHAVIOR_COMPONENT_FLAG</b>&nbsp;&nbsp;&nbsp;0x20000000</td></tr>
+<tr class="separator:a69dea4976032ab280b8616573214618b"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:abce2e24ce19dd36f6fbc59e9e455e1ef"><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#abce2e24ce19dd36f6fbc59e9e455e1ef">H3_CIRCLE_COLLIDER</a>(DT,  R,  TRIG)</td></tr>
+<tr class="separator:abce2e24ce19dd36f6fbc59e9e455e1ef"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a670edc4fd4c454cfd03a0dba010ff983"><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a670edc4fd4c454cfd03a0dba010ff983">H3_BOX_COLLIDER</a>(DT,  W,  H,  A,  TRIG)</td></tr>
+<tr class="separator:a670edc4fd4c454cfd03a0dba010ff983"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a91f110c4dc218da754bfb9b3af549523"><td class="memItemLeft" align="right" valign="top"><a id="a91f110c4dc218da754bfb9b3af549523" name="a91f110c4dc218da754bfb9b3af549523"></a>
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>H3_MAX_COLLISION_CONTACT_POINTS</b>&nbsp;&nbsp;&nbsp;8</td></tr>
+<tr class="separator:a91f110c4dc218da754bfb9b3af549523"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:ae5cc26d014fe9456edb7a15a815392cc"><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ae5cc26d014fe9456edb7a15a815392cc">H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW</a>(C,  T,  N)</td></tr>
+<tr class="separator:ae5cc26d014fe9456edb7a15a815392cc"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:aa2e8fd03760052ecc38d92bdd1c1f66c"><td class="memItemLeft" align="right" valign="top"><a id="aa2e8fd03760052ecc38d92bdd1c1f66c" name="aa2e8fd03760052ecc38d92bdd1c1f66c"></a>
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RO</b>(C,  T,  N)&nbsp;&nbsp;&nbsp;	T C##_Get##N(void* properties);</td></tr>
+<tr class="separator:aa2e8fd03760052ecc38d92bdd1c1f66c"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:ad0d18604a60c1b90716a0155a0599428"><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ad0d18604a60c1b90716a0155a0599428">H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RW</a>(C,  T,  N)</td></tr>
+<tr class="separator:ad0d18604a60c1b90716a0155a0599428"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a5234a49e0fa175277cd94b151a4b7336"><td class="memItemLeft" align="right" valign="top"><a id="a5234a49e0fa175277cd94b151a4b7336" name="a5234a49e0fa175277cd94b151a4b7336"></a>
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RO</b>(C,  T,  N)&nbsp;&nbsp;&nbsp;	T C##_Get##N(void* properties) { return ((C##_Properties*)properties)-&gt;N; }</td></tr>
+<tr class="separator:a5234a49e0fa175277cd94b151a4b7336"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a6fc0a11e464759940571680fb5529ee5"><td class="memItemLeft" align="right" valign="top"><a id="a6fc0a11e464759940571680fb5529ee5" name="a6fc0a11e464759940571680fb5529ee5"></a>
+typedef void&nbsp;</td><td class="memItemRight" valign="bottom"><b>SH3Transform</b></td></tr>
+<tr class="separator:a6fc0a11e464759940571680fb5529ee5"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a6dd0fc95449dd3b76790716d35f82d50"><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a6dd0fc95449dd3b76790716d35f82d50">EH3Key</a> { <br>
+&nbsp;&nbsp;<b>K_Left</b>
+, <b>K_Right</b>
+, <b>K_Up</b>
+, <b>K_Down</b>
+, <br>
+&nbsp;&nbsp;<b>K_Space</b>
+, <b>K_Enter</b>
+, <b>K_Tab</b>
+, <b>K_Backspace</b>
+, <br>
+&nbsp;&nbsp;<b>K_Escape</b>
+, <b>K_Shift</b>
+, <b>K_Ctrl</b>
+, <b>K_F2</b>
+, <br>
+&nbsp;&nbsp;<b>EH3Key_Count</b>
+<br>
+ }</td></tr>
+<tr class="separator:a6dd0fc95449dd3b76790716d35f82d50"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:aca8ad19cdc464f8bc127841e2b0b22b4"><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aca8ad19cdc464f8bc127841e2b0b22b4">EH3MouseButton</a> { <b>MB_Left</b>
+, <b>MB_Middle</b>
+, <b>MB_Right</b>
+, <b>EH3MouseButton_Count</b>
+ }</td></tr>
+<tr class="separator:aca8ad19cdc464f8bc127841e2b0b22b4"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:aa9b4c8fa5ee256603deb769bf29a71e4"><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa9b4c8fa5ee256603deb769bf29a71e4">EH3Anchor</a> { <br>
+&nbsp;&nbsp;<b>A_Left</b> = 0x01
+, <b>A_Center</b> = 0x02
+, <b>A_Right</b> = 0x04
+, <b>A_Top</b> = 0x10
+, <br>
+&nbsp;&nbsp;<b>A_Middle</b> = 0x20
+, <b>A_Bottom</b> = 0x40
+<br>
+ }</td></tr>
+<tr class="separator:aa9b4c8fa5ee256603deb769bf29a71e4"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a218e114ad8d700a9b9fb5e5772bf6a22"><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a218e114ad8d700a9b9fb5e5772bf6a22">EH3ColliderShapeType</a> { <b>CST_Circle</b>
+, <b>CST_Box</b>
+ }</td></tr>
+<tr class="separator:a218e114ad8d700a9b9fb5e5772bf6a22"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:aded5538abe942e1c47a6c5fa4f21d01f"><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aded5538abe942e1c47a6c5fa4f21d01f">EH3ColliderDynamicsType</a> { <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aded5538abe942e1c47a6c5fa4f21d01fac01e341368923a0445fa3266e263dd15">CDT_Static</a>
+, <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aded5538abe942e1c47a6c5fa4f21d01fae5b232b2719d9d8e5fefe4b6c60e9f88">CDT_Kinematic</a>
+, <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aded5538abe942e1c47a6c5fa4f21d01fad454a41a8c81ce3a992a8ca45e3ad88f">CDT_Dynamic</a>
+ }</td></tr>
+<tr class="separator:aded5538abe942e1c47a6c5fa4f21d01f"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+</tbody></table><table class="memberdecls">
+<tbody><tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:acc936be4e99f64c4ffdce295d7ced8ba"><td class="memItemLeft" align="right" valign="top">H3Handle&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#acc936be4e99f64c4ffdce295d7ced8ba">H3_Init</a> (<a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_init_params.html">SH3InitParams</a> params)</td></tr>
+<tr class="memdesc:acc936be4e99f64c4ffdce295d7ced8ba"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initializes H3 and opens a window.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#acc936be4e99f64c4ffdce295d7ced8ba">More...</a><br></td></tr>
+<tr class="separator:acc936be4e99f64c4ffdce295d7ced8ba"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:ad6d7af8271fbbb6df600f5b4512a69af"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ad6d7af8271fbbb6df600f5b4512a69af">H3_Terminate</a> (H3Handle *h3)</td></tr>
+<tr class="memdesc:ad6d7af8271fbbb6df600f5b4512a69af"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Closes the window and deinitializes H3.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ad6d7af8271fbbb6df600f5b4512a69af">More...</a><br></td></tr>
+<tr class="separator:ad6d7af8271fbbb6df600f5b4512a69af"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a7481c022516df17b0021c7e886a6017f"><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a7481c022516df17b0021c7e886a6017f">H3_GetTime</a> ()</td></tr>
+<tr class="separator:a7481c022516df17b0021c7e886a6017f"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a8ec4578617e36e582d2aa12eb8250d8b"><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a8ec4578617e36e582d2aa12eb8250d8b">H3_GetDeltaTime</a> ()</td></tr>
+<tr class="separator:a8ec4578617e36e582d2aa12eb8250d8b"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a1e4609d10c05b8759c7de7027a065620"><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a1e4609d10c05b8759c7de7027a065620">H3_Input_IsKeyDown</a> (<a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a6dd0fc95449dd3b76790716d35f82d50">EH3Key</a> k)</td></tr>
+<tr class="separator:a1e4609d10c05b8759c7de7027a065620"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:ad751473f8992b9fa0058733e1649d3fa"><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ad751473f8992b9fa0058733e1649d3fa">H3_Input_IsKeyPressed</a> (<a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a6dd0fc95449dd3b76790716d35f82d50">EH3Key</a> k)</td></tr>
+<tr class="separator:ad751473f8992b9fa0058733e1649d3fa"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a238b58fabe3c6172cd7c61b3f784ac8c"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a238b58fabe3c6172cd7c61b3f784ac8c">H3_Input_GetMousePos</a> (H3Handle h3, int *x, int *y)</td></tr>
+<tr class="memdesc:a238b58fabe3c6172cd7c61b3f784ac8c"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns true on the first frame the key is down, false otherwise.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a238b58fabe3c6172cd7c61b3f784ac8c">More...</a><br></td></tr>
+<tr class="separator:a238b58fabe3c6172cd7c61b3f784ac8c"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a5dbb785c24f6eb70864d3aa66299bb31"><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a5dbb785c24f6eb70864d3aa66299bb31">H3_Input_IsMouseBtnDown</a> (<a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aca8ad19cdc464f8bc127841e2b0b22b4">EH3MouseButton</a> btn)</td></tr>
+<tr class="memdesc:a5dbb785c24f6eb70864d3aa66299bb31"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns true if the mouse button is down, false otherwise.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a5dbb785c24f6eb70864d3aa66299bb31">More...</a><br></td></tr>
+<tr class="separator:a5dbb785c24f6eb70864d3aa66299bb31"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a84b997bd7d20ea49c659dad617d87b53"><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a84b997bd7d20ea49c659dad617d87b53">H3_Input_IsMouseBtnPressed</a> (<a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aca8ad19cdc464f8bc127841e2b0b22b4">EH3MouseButton</a> btn)</td></tr>
+<tr class="memdesc:a84b997bd7d20ea49c659dad617d87b53"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns true on the first frame the mouse button is down, false otherwise.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a84b997bd7d20ea49c659dad617d87b53">More...</a><br></td></tr>
+<tr class="separator:a84b997bd7d20ea49c659dad617d87b53"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a8c9eeda84ee590a6455f363259e60155"><td class="memItemLeft" align="right" valign="top">H3Handle&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a8c9eeda84ee590a6455f363259e60155">H3_Scene_Create</a> (H3Handle h3, bool physicsLocksRotation)</td></tr>
+<tr class="memdesc:a8c9eeda84ee590a6455f363259e60155"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a new scene.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a8c9eeda84ee590a6455f363259e60155">More...</a><br></td></tr>
+<tr class="separator:a8c9eeda84ee590a6455f363259e60155"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a49e3441f9932768e29fa778c40bb1702"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a49e3441f9932768e29fa778c40bb1702">H3_Scene_Destroy</a> (H3Handle scene)</td></tr>
+<tr class="memdesc:a49e3441f9932768e29fa778c40bb1702"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destroys a scene.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a49e3441f9932768e29fa778c40bb1702">More...</a><br></td></tr>
+<tr class="separator:a49e3441f9932768e29fa778c40bb1702"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a43b9a6f6d9078554a8ce45f6382e5adb"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a43b9a6f6d9078554a8ce45f6382e5adb">H3_Scene_SetGravity</a> (H3Handle scene, float x, float y)</td></tr>
+<tr class="memdesc:a43b9a6f6d9078554a8ce45f6382e5adb"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets a scene's gravity, which can be in any direction and of any strength.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a43b9a6f6d9078554a8ce45f6382e5adb">More...</a><br></td></tr>
+<tr class="separator:a43b9a6f6d9078554a8ce45f6382e5adb"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:aab0538f0d9433790c188dc0b70dd1dfd"><td class="memItemLeft" align="right" valign="top">H3Handle&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aab0538f0d9433790c188dc0b70dd1dfd">H3_Object_Create</a> (H3Handle scene, const char *objName, H3Handle parent)</td></tr>
+<tr class="memdesc:aab0538f0d9433790c188dc0b70dd1dfd"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a new object.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aab0538f0d9433790c188dc0b70dd1dfd">More...</a><br></td></tr>
+<tr class="separator:aab0538f0d9433790c188dc0b70dd1dfd"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:ad2be55b2d409cc5e0723295e41bd8224"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ad2be55b2d409cc5e0723295e41bd8224">H3_Object_Destroy</a> (H3Handle object, bool recursive)</td></tr>
+<tr class="memdesc:ad2be55b2d409cc5e0723295e41bd8224"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destroy an object.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ad2be55b2d409cc5e0723295e41bd8224">More...</a><br></td></tr>
+<tr class="separator:ad2be55b2d409cc5e0723295e41bd8224"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a314b558cab2947edd801b0394bd6f185"><td class="memItemLeft" align="right" valign="top">H3Handle&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a314b558cab2947edd801b0394bd6f185">H3_Object_Get</a> (H3Handle scene, const char *objName)</td></tr>
+<tr class="memdesc:a314b558cab2947edd801b0394bd6f185"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Find an object in a scene.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a314b558cab2947edd801b0394bd6f185">More...</a><br></td></tr>
+<tr class="separator:a314b558cab2947edd801b0394bd6f185"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a7e9be25dd07a9e120c8e0b8d1447bd51"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a7e9be25dd07a9e120c8e0b8d1447bd51">H3_Object_SetEnabled</a> (H3Handle object, bool enabled)</td></tr>
+<tr class="memdesc:a7e9be25dd07a9e120c8e0b8d1447bd51"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enables or disables an object. A disabled object is neither shown nor updated.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a7e9be25dd07a9e120c8e0b8d1447bd51">More...</a><br></td></tr>
+<tr class="separator:a7e9be25dd07a9e120c8e0b8d1447bd51"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a49ac6c9c267f5e0ab583f8ec3f78dda6"><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a49ac6c9c267f5e0ab583f8ec3f78dda6">H3_Object_GetEnabled</a> (H3Handle object)</td></tr>
+<tr class="memdesc:a49ac6c9c267f5e0ab583f8ec3f78dda6"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the Enabled state of an object. A disabled object is neither shown nor updated.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a49ac6c9c267f5e0ab583f8ec3f78dda6">More...</a><br></td></tr>
+<tr class="separator:a49ac6c9c267f5e0ab583f8ec3f78dda6"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:acc026ea2864e72584ee2438841f09772"><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#acc026ea2864e72584ee2438841f09772">H3_Object_GetName</a> (H3Handle object)</td></tr>
+<tr class="memdesc:acc026ea2864e72584ee2438841f09772"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets an object's name.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#acc026ea2864e72584ee2438841f09772">More...</a><br></td></tr>
+<tr class="separator:acc026ea2864e72584ee2438841f09772"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:aca9193a0e6cbf2a697ccfdd6c9815616"><td class="memItemLeft" align="right" valign="top">int32_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aca9193a0e6cbf2a697ccfdd6c9815616">H3_Object_GetRenderOrder</a> (H3Handle object)</td></tr>
+<tr class="memdesc:aca9193a0e6cbf2a697ccfdd6c9815616"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets an object's render order. Objects are rendered in ascending render order, so the higher the render order is, the later (and the more above the others) it is drawn.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aca9193a0e6cbf2a697ccfdd6c9815616">More...</a><br></td></tr>
+<tr class="separator:aca9193a0e6cbf2a697ccfdd6c9815616"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a0f011c1e4b0da2af82e0f818b4874325"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a0f011c1e4b0da2af82e0f818b4874325">H3_Object_SetRenderOrder</a> (H3Handle object, int32_t renderOrder)</td></tr>
+<tr class="memdesc:a0f011c1e4b0da2af82e0f818b4874325"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets an object's render order. Objects are rendered in ascending render order, so the higher the render order is, the later (and the more above the others) it is drawn.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a0f011c1e4b0da2af82e0f818b4874325">More...</a><br></td></tr>
+<tr class="separator:a0f011c1e4b0da2af82e0f818b4874325"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:acb40277e4dd120ac90a3c0dceb5bbd53"><td class="memItemLeft" align="right" valign="top">SH3Transform *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#acb40277e4dd120ac90a3c0dceb5bbd53">H3_Object_GetTransform</a> (H3Handle object)</td></tr>
+<tr class="memdesc:acb40277e4dd120ac90a3c0dceb5bbd53"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets an object's transform (Translation, rotation, scale)  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#acb40277e4dd120ac90a3c0dceb5bbd53">More...</a><br></td></tr>
+<tr class="separator:acb40277e4dd120ac90a3c0dceb5bbd53"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a86c624210c4bdf524ab544ef9a95ddd9"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a86c624210c4bdf524ab544ef9a95ddd9">H3_Object_ResetTransform</a> (H3Handle object)</td></tr>
+<tr class="memdesc:a86c624210c4bdf524ab544ef9a95ddd9"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Resets an object's transform (no translation, no rotation, scale 1:1).  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a86c624210c4bdf524ab544ef9a95ddd9">More...</a><br></td></tr>
+<tr class="separator:a86c624210c4bdf524ab544ef9a95ddd9"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:ac1f66b3974b9548a81ee0150d68f34f7"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ac1f66b3974b9548a81ee0150d68f34f7">H3_Object_Translate</a> (H3Handle object, float x, float y)</td></tr>
+<tr class="memdesc:ac1f66b3974b9548a81ee0150d68f34f7"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Translates an object.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ac1f66b3974b9548a81ee0150d68f34f7">More...</a><br></td></tr>
+<tr class="separator:ac1f66b3974b9548a81ee0150d68f34f7"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:ab30f47d24e8cfcadb21f17c8440223f9"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ab30f47d24e8cfcadb21f17c8440223f9">H3_Object_Rotate</a> (H3Handle object, float angle)</td></tr>
+<tr class="memdesc:ab30f47d24e8cfcadb21f17c8440223f9"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Rotates an object.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ab30f47d24e8cfcadb21f17c8440223f9">More...</a><br></td></tr>
+<tr class="separator:ab30f47d24e8cfcadb21f17c8440223f9"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:aa14ba33e38f1b88054073d2c17b913dc"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa14ba33e38f1b88054073d2c17b913dc">H3_Object_Scale</a> (H3Handle object, float s)</td></tr>
+<tr class="memdesc:aa14ba33e38f1b88054073d2c17b913dc"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Scales an object.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa14ba33e38f1b88054073d2c17b913dc">More...</a><br></td></tr>
+<tr class="separator:aa14ba33e38f1b88054073d2c17b913dc"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a369a09a8ea7dc0574dac91cc4e2f024d"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a369a09a8ea7dc0574dac91cc4e2f024d">H3_Object_SetTranslation</a> (H3Handle object, float x, float y)</td></tr>
+<tr class="memdesc:a369a09a8ea7dc0574dac91cc4e2f024d"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets an object's translation.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a369a09a8ea7dc0574dac91cc4e2f024d">More...</a><br></td></tr>
+<tr class="separator:a369a09a8ea7dc0574dac91cc4e2f024d"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:adef4f23ccb48d35ab47d6877c6d0e0b3"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#adef4f23ccb48d35ab47d6877c6d0e0b3">H3_Object_SetRotation</a> (H3Handle object, float angle)</td></tr>
+<tr class="memdesc:adef4f23ccb48d35ab47d6877c6d0e0b3"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets an object's rotation.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#adef4f23ccb48d35ab47d6877c6d0e0b3">More...</a><br></td></tr>
+<tr class="separator:adef4f23ccb48d35ab47d6877c6d0e0b3"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:af46b02abafe7733337e5fafb4eded723"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#af46b02abafe7733337e5fafb4eded723">H3_Object_SetScale</a> (H3Handle object, float s)</td></tr>
+<tr class="memdesc:af46b02abafe7733337e5fafb4eded723"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets an object's scale.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#af46b02abafe7733337e5fafb4eded723">More...</a><br></td></tr>
+<tr class="separator:af46b02abafe7733337e5fafb4eded723"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:aec5d2e9554c0514ed7f9ee274ef82231"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aec5d2e9554c0514ed7f9ee274ef82231">H3_Object_ScaleNonUniform</a> (H3Handle object, float x, float y)</td></tr>
+<tr class="memdesc:aec5d2e9554c0514ed7f9ee274ef82231"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets an object's scale.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aec5d2e9554c0514ed7f9ee274ef82231">More...</a><br></td></tr>
+<tr class="separator:aec5d2e9554c0514ed7f9ee274ef82231"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a72b65314a6dc5fd5bf13e92345f7eab4"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a72b65314a6dc5fd5bf13e92345f7eab4">H3_Object_AddComponent</a> (H3Handle object, <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_component.html">SH3Component</a> component)</td></tr>
+<tr class="memdesc:a72b65314a6dc5fd5bf13e92345f7eab4"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adds a component to the object.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a72b65314a6dc5fd5bf13e92345f7eab4">More...</a><br></td></tr>
+<tr class="separator:a72b65314a6dc5fd5bf13e92345f7eab4"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a4bbc759d480b18a783d86957ef7fd17a"><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a4bbc759d480b18a783d86957ef7fd17a">H3_Object_RemoveComponent</a> (H3Handle object, uint32_t componentId)</td></tr>
+<tr class="memdesc:a4bbc759d480b18a783d86957ef7fd17a"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Removes a component from the object.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a4bbc759d480b18a783d86957ef7fd17a">More...</a><br></td></tr>
+<tr class="separator:a4bbc759d480b18a783d86957ef7fd17a"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a9ce8369f582ba4c85e7fa22e9dd59107"><td class="memItemLeft" align="right" valign="top"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_component.html">SH3Component</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a9ce8369f582ba4c85e7fa22e9dd59107">H3_Object_GetComponent</a> (H3Handle object, uint32_t componentId)</td></tr>
+<tr class="memdesc:a9ce8369f582ba4c85e7fa22e9dd59107"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets an object's component.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a9ce8369f582ba4c85e7fa22e9dd59107">More...</a><br></td></tr>
+<tr class="separator:a9ce8369f582ba4c85e7fa22e9dd59107"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a9e2d4eccceb5567697cfd951b8615316"><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a9e2d4eccceb5567697cfd951b8615316">H3_Object_HasComponent</a> (H3Handle object, uint32_t componentId)</td></tr>
+<tr class="memdesc:a9e2d4eccceb5567697cfd951b8615316"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets whether an object has a component.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a9e2d4eccceb5567697cfd951b8615316">More...</a><br></td></tr>
+<tr class="separator:a9e2d4eccceb5567697cfd951b8615316"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a1e8b973e9f0c6aa1ffef9fb266092afe"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a1e8b973e9f0c6aa1ffef9fb266092afe">H3_Object_EnablePhysics</a> (H3Handle object, <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_collider_desc.html">SH3ColliderDesc</a> desc)</td></tr>
+<tr class="memdesc:a1e8b973e9f0c6aa1ffef9fb266092afe"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enables physics for this component. Once called, this object will be affected by gravity and will receive OnCollisionEnter/OnCollisionLeave (and Trigger variants) events.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a1e8b973e9f0c6aa1ffef9fb266092afe">More...</a><br></td></tr>
+<tr class="separator:a1e8b973e9f0c6aa1ffef9fb266092afe"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a7f09b67243e470d418f0806c01ca68d1"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a7f09b67243e470d418f0806c01ca68d1">H3_Object_EnablePhysicsEx</a> (H3Handle object, <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_collider_desc.html">SH3ColliderDesc</a> *descList, uint32_t numShapes)</td></tr>
+<tr class="memdesc:a7f09b67243e470d418f0806c01ca68d1"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enables physics for this component using multiple shapes to make a more complex collider. Once called, this object will be affected by gravity and will receive OnCollisionEnter/OnCollisionLeave (and Trigger variants) events.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a7f09b67243e470d418f0806c01ca68d1">More...</a><br></td></tr>
+<tr class="separator:a7f09b67243e470d418f0806c01ca68d1"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a1b250b78cd9af1be5954c6dd7a17f376"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a1b250b78cd9af1be5954c6dd7a17f376">H3_Object_DisablePhysics</a> (H3Handle object)</td></tr>
+<tr class="memdesc:a1b250b78cd9af1be5954c6dd7a17f376"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Disables physics for this component. Once called, this object will no longer be affected by gravity and will no longer receive OnCollisionEnter/OnCollisionLeave (or Trigger variants) events.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a1b250b78cd9af1be5954c6dd7a17f376">More...</a><br></td></tr>
+<tr class="separator:a1b250b78cd9af1be5954c6dd7a17f376"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:aafefbee59efd494249fb2c16d1a60e6c"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aafefbee59efd494249fb2c16d1a60e6c">H3_Object_GetVelocity</a> (H3Handle object, float *vx, float *vy)</td></tr>
+<tr class="memdesc:aafefbee59efd494249fb2c16d1a60e6c"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retrieves an object's linear velocity. Only valid if this object has physics enabled.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aafefbee59efd494249fb2c16d1a60e6c">More...</a><br></td></tr>
+<tr class="separator:aafefbee59efd494249fb2c16d1a60e6c"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a07e003484aa00833d0bbcdb483505ed6"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a07e003484aa00833d0bbcdb483505ed6">H3_Object_SetVelocity</a> (H3Handle object, float vx, float vy)</td></tr>
+<tr class="memdesc:a07e003484aa00833d0bbcdb483505ed6"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets an object's linear velocity. Only valid if this object has physics enabled.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a07e003484aa00833d0bbcdb483505ed6">More...</a><br></td></tr>
+<tr class="separator:a07e003484aa00833d0bbcdb483505ed6"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a9699066f0a9db602ea3e4db9ff6e8c6a"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a9699066f0a9db602ea3e4db9ff6e8c6a">H3_Object_AddVelocity</a> (H3Handle object, float vx, float vy)</td></tr>
+<tr class="memdesc:a9699066f0a9db602ea3e4db9ff6e8c6a"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Add to an object's linear velocity. Only valid if this object has physics enabled.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a9699066f0a9db602ea3e4db9ff6e8c6a">More...</a><br></td></tr>
+<tr class="separator:a9699066f0a9db602ea3e4db9ff6e8c6a"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:afe10c858086ca3d29645100df1d9ff4c"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#afe10c858086ca3d29645100df1d9ff4c">H3_Transform_GetPosition</a> (SH3Transform *transform, float *x, float *y)</td></tr>
+<tr class="memdesc:afe10c858086ca3d29645100df1d9ff4c"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets a position from a SH3Transform pointer.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#afe10c858086ca3d29645100df1d9ff4c">More...</a><br></td></tr>
+<tr class="separator:afe10c858086ca3d29645100df1d9ff4c"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a768b7c692ccd7ee53aede681e4e3b3e6"><td class="memItemLeft" align="right" valign="top">H3Handle&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a768b7c692ccd7ee53aede681e4e3b3e6">H3_Texture_Load</a> (const char *path, uint32_t *width, uint32_t *height)</td></tr>
+<tr class="memdesc:a768b7c692ccd7ee53aede681e4e3b3e6"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Loads a texture.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a768b7c692ccd7ee53aede681e4e3b3e6">More...</a><br></td></tr>
+<tr class="separator:a768b7c692ccd7ee53aede681e4e3b3e6"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:acd93f77224f81f41829ea5d0e7b4ed06"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#acd93f77224f81f41829ea5d0e7b4ed06">H3_Texture_Destroy</a> (H3Handle handle)</td></tr>
+<tr class="memdesc:acd93f77224f81f41829ea5d0e7b4ed06"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destroys a texture.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#acd93f77224f81f41829ea5d0e7b4ed06">More...</a><br></td></tr>
+<tr class="separator:acd93f77224f81f41829ea5d0e7b4ed06"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a317b12a0056502d357b0df1b2fa8f522"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a317b12a0056502d357b0df1b2fa8f522">H3_Texture_Draw</a> (H3Handle h3, float px, float py, H3Handle texture, <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa9b4c8fa5ee256603deb769bf29a71e4">EH3Anchor</a> anchor)</td></tr>
+<tr class="memdesc:a317b12a0056502d357b0df1b2fa8f522"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws a texture to screen.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a317b12a0056502d357b0df1b2fa8f522">More...</a><br></td></tr>
+<tr class="separator:a317b12a0056502d357b0df1b2fa8f522"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:ab400a5fd9605647af9623e487d8d64cd"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ab400a5fd9605647af9623e487d8d64cd">H3_Texture_DrawEx</a> (H3Handle h3, SH3Transform *transform, H3Handle texture, <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa9b4c8fa5ee256603deb769bf29a71e4">EH3Anchor</a> anchor)</td></tr>
+<tr class="memdesc:ab400a5fd9605647af9623e487d8d64cd"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws a texture to screen.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ab400a5fd9605647af9623e487d8d64cd">More...</a><br></td></tr>
+<tr class="separator:ab400a5fd9605647af9623e487d8d64cd"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:ad34d163aeb0a45e83954d33dafff8309"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ad34d163aeb0a45e83954d33dafff8309">H3_Texture_DrawRectEx</a> (H3Handle h3, SH3Transform *transform, H3Handle texture, float x0, float y0, float x1, float y1, <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa9b4c8fa5ee256603deb769bf29a71e4">EH3Anchor</a> anchor)</td></tr>
+<tr class="memdesc:ad34d163aeb0a45e83954d33dafff8309"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws part of a texture to screen.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ad34d163aeb0a45e83954d33dafff8309">More...</a><br></td></tr>
+<tr class="separator:ad34d163aeb0a45e83954d33dafff8309"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:adbd194ff1b03116c75cf1ae8f7007929"><td class="memItemLeft" align="right" valign="top">H3Handle&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#adbd194ff1b03116c75cf1ae8f7007929">H3_Map_Load</a> (const char *path)</td></tr>
+<tr class="memdesc:adbd194ff1b03116c75cf1ae8f7007929"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Loads a map.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#adbd194ff1b03116c75cf1ae8f7007929">More...</a><br></td></tr>
+<tr class="separator:adbd194ff1b03116c75cf1ae8f7007929"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:ac80adfd7353fc9e78d80f76076e136ed"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ac80adfd7353fc9e78d80f76076e136ed">H3_Map_Destroy</a> (H3Handle *handle)</td></tr>
+<tr class="memdesc:ac80adfd7353fc9e78d80f76076e136ed"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destroys a map.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ac80adfd7353fc9e78d80f76076e136ed">More...</a><br></td></tr>
+<tr class="separator:ac80adfd7353fc9e78d80f76076e136ed"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a571f29bed0ad7dd73bc9a83999960373"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a571f29bed0ad7dd73bc9a83999960373">H3_Map_RegisterObjectLayerForPhysicsInScene</a> (H3Handle scene, H3Handle map, const char *layerName)</td></tr>
+<tr class="memdesc:a571f29bed0ad7dd73bc9a83999960373"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Register all shapes in a specified object layer as static colliders in a scene.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a571f29bed0ad7dd73bc9a83999960373">More...</a><br></td></tr>
+<tr class="separator:a571f29bed0ad7dd73bc9a83999960373"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a9c9c12d3e714c9cdfc892244f19c8adb"><td class="memItemLeft" align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a9c9c12d3e714c9cdfc892244f19c8adb">H3_Map_GetLayerFromName</a> (H3Handle map, const char *layerName)</td></tr>
+<tr class="memdesc:a9c9c12d3e714c9cdfc892244f19c8adb"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the ID of a layer from its name.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a9c9c12d3e714c9cdfc892244f19c8adb">More...</a><br></td></tr>
+<tr class="separator:a9c9c12d3e714c9cdfc892244f19c8adb"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a2b8bde53e5a4eb8812e814fb64232643"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a2b8bde53e5a4eb8812e814fb64232643">H3_Map_Draw</a> (H3Handle h3, H3Handle map)</td></tr>
+<tr class="memdesc:a2b8bde53e5a4eb8812e814fb64232643"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws a full map, using (0, 0) as origin.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a2b8bde53e5a4eb8812e814fb64232643">More...</a><br></td></tr>
+<tr class="separator:a2b8bde53e5a4eb8812e814fb64232643"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a790e9eba174f65e125082158de4c6a93"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a790e9eba174f65e125082158de4c6a93">H3_Map_DrawLayer</a> (H3Handle h3, H3Handle map, size_t layerId)</td></tr>
+<tr class="memdesc:a790e9eba174f65e125082158de4c6a93"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws a single map layer, using (0, 0) as origin.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a790e9eba174f65e125082158de4c6a93">More...</a><br></td></tr>
+<tr class="separator:a790e9eba174f65e125082158de4c6a93"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:abeda51b1a83a27a8ea0aafb3d8f4634a"><td class="memItemLeft" align="right" valign="top">H3Handle&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#abeda51b1a83a27a8ea0aafb3d8f4634a">H3_Sound_Load</a> (const char *path)</td></tr>
+<tr class="memdesc:abeda51b1a83a27a8ea0aafb3d8f4634a"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Loads a sound.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#abeda51b1a83a27a8ea0aafb3d8f4634a">More...</a><br></td></tr>
+<tr class="separator:abeda51b1a83a27a8ea0aafb3d8f4634a"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a85937e330220ec38fa7ea431a2630cb1"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a85937e330220ec38fa7ea431a2630cb1">H3_Sound_Destroy</a> (H3Handle handle)</td></tr>
+<tr class="memdesc:a85937e330220ec38fa7ea431a2630cb1"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destroys a sound.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a85937e330220ec38fa7ea431a2630cb1">More...</a><br></td></tr>
+<tr class="separator:a85937e330220ec38fa7ea431a2630cb1"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:ae12c2a273e15a78c3ad021b8b2a977f4"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ae12c2a273e15a78c3ad021b8b2a977f4">H3_Sound_Play</a> (H3Handle snd, float volume, bool loop)</td></tr>
+<tr class="memdesc:ae12c2a273e15a78c3ad021b8b2a977f4"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Plays a sound (without spatialization)  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ae12c2a273e15a78c3ad021b8b2a977f4">More...</a><br></td></tr>
+<tr class="separator:ae12c2a273e15a78c3ad021b8b2a977f4"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a0e8bda8a2d00cbd92dd14bcfd2f24a80"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a0e8bda8a2d00cbd92dd14bcfd2f24a80">H3_Sound_PlaySpatialized</a> (H3Handle snd, float volume, float px, float py, bool loop)</td></tr>
+<tr class="memdesc:a0e8bda8a2d00cbd92dd14bcfd2f24a80"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Plays a sound (spatialized)  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a0e8bda8a2d00cbd92dd14bcfd2f24a80">More...</a><br></td></tr>
+<tr class="separator:a0e8bda8a2d00cbd92dd14bcfd2f24a80"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a660f827eb1b4c86f4c9dab2facf16415"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a660f827eb1b4c86f4c9dab2facf16415">H3_Sound_Stop</a> (H3Handle snd)</td></tr>
+<tr class="memdesc:a660f827eb1b4c86f4c9dab2facf16415"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stops a sound.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a660f827eb1b4c86f4c9dab2facf16415">More...</a><br></td></tr>
+<tr class="separator:a660f827eb1b4c86f4c9dab2facf16415"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a2dc0ac8f72d2edb068810ad4e9c298fa"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a2dc0ac8f72d2edb068810ad4e9c298fa">H3_Sound_SetPosition</a> (H3Handle snd, float px, float py)</td></tr>
+<tr class="memdesc:a2dc0ac8f72d2edb068810ad4e9c298fa"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets a spatialized sound position.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a2dc0ac8f72d2edb068810ad4e9c298fa">More...</a><br></td></tr>
+<tr class="separator:a2dc0ac8f72d2edb068810ad4e9c298fa"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a58fa895696800141d5e7ce7750c1039f"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a58fa895696800141d5e7ce7750c1039f">H3_Listener_SetLocation</a> (float px, float py, float angle)</td></tr>
+<tr class="memdesc:a58fa895696800141d5e7ce7750c1039f"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the sound listener's location. All spatialized sounds will use this listener as a reference.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a58fa895696800141d5e7ce7750c1039f">More...</a><br></td></tr>
+<tr class="separator:a58fa895696800141d5e7ce7750c1039f"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:aa76680cbe662ebffce13d9746554fc25"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa76680cbe662ebffce13d9746554fc25">H3_Listener_SetPosition</a> (float px, float py)</td></tr>
+<tr class="memdesc:aa76680cbe662ebffce13d9746554fc25"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the sound listener's position. All spatialized sounds will use this listener as a reference.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa76680cbe662ebffce13d9746554fc25">More...</a><br></td></tr>
+<tr class="separator:aa76680cbe662ebffce13d9746554fc25"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:aeb8e8c025254901740a9bdd1ad8699a7"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aeb8e8c025254901740a9bdd1ad8699a7">H3_Listener_SetRotation</a> (float angle)</td></tr>
+<tr class="memdesc:aeb8e8c025254901740a9bdd1ad8699a7"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the sound listener's rotation angle. All spatialized sounds will use this listener as a reference.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aeb8e8c025254901740a9bdd1ad8699a7">More...</a><br></td></tr>
+<tr class="separator:aeb8e8c025254901740a9bdd1ad8699a7"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a68d3b096cc83ce06e349f6fdb8214f4c"><td class="memItemLeft" align="right" valign="top">H3Handle&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a68d3b096cc83ce06e349f6fdb8214f4c">H3_Music_Load</a> (const char *path)</td></tr>
+<tr class="memdesc:a68d3b096cc83ce06e349f6fdb8214f4c"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Loads a music.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a68d3b096cc83ce06e349f6fdb8214f4c">More...</a><br></td></tr>
+<tr class="separator:a68d3b096cc83ce06e349f6fdb8214f4c"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a82348883e1d7373b90e3f980e90b77b3"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a82348883e1d7373b90e3f980e90b77b3">H3_Music_Destroy</a> (H3Handle handle)</td></tr>
+<tr class="memdesc:a82348883e1d7373b90e3f980e90b77b3"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destroys a music.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a82348883e1d7373b90e3f980e90b77b3">More...</a><br></td></tr>
+<tr class="separator:a82348883e1d7373b90e3f980e90b77b3"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a83e535be4a06872296d58db83dc80b76"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a83e535be4a06872296d58db83dc80b76">H3_Music_Play</a> (H3Handle music, float volume, bool loop)</td></tr>
+<tr class="memdesc:a83e535be4a06872296d58db83dc80b76"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Plays a music.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a83e535be4a06872296d58db83dc80b76">More...</a><br></td></tr>
+<tr class="separator:a83e535be4a06872296d58db83dc80b76"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:ace53792a3dcfe1af5cf666dbd3718e03"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ace53792a3dcfe1af5cf666dbd3718e03">H3_Music_Stop</a> (H3Handle music)</td></tr>
+<tr class="memdesc:ace53792a3dcfe1af5cf666dbd3718e03"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stops a music.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ace53792a3dcfe1af5cf666dbd3718e03">More...</a><br></td></tr>
+<tr class="separator:ace53792a3dcfe1af5cf666dbd3718e03"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a30563a349ff8feca90d35a063945a359"><td class="memItemLeft" align="right" valign="top">H3Handle&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a30563a349ff8feca90d35a063945a359">H3_Font_Load</a> (const char *path)</td></tr>
+<tr class="memdesc:a30563a349ff8feca90d35a063945a359"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Loads a font.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a30563a349ff8feca90d35a063945a359">More...</a><br></td></tr>
+<tr class="separator:a30563a349ff8feca90d35a063945a359"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a0bad8da1fcb496c8a71aaa40b4e609bb"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a0bad8da1fcb496c8a71aaa40b4e609bb">H3_Font_Destroy</a> (H3Handle handle)</td></tr>
+<tr class="memdesc:a0bad8da1fcb496c8a71aaa40b4e609bb"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destroys a font.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a0bad8da1fcb496c8a71aaa40b4e609bb">More...</a><br></td></tr>
+<tr class="separator:a0bad8da1fcb496c8a71aaa40b4e609bb"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a934efa774730583ab7093d98c758a9d5"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a934efa774730583ab7093d98c758a9d5">H3_Font_Printf</a> (H3Handle h3, <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_text_properties.html">SH3TextProperties</a> properties, SH3Transform *transform, const char *format,...)</td></tr>
+<tr class="memdesc:a934efa774730583ab7093d98c758a9d5"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws a text to the window using the specified properties.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a934efa774730583ab7093d98c758a9d5">More...</a><br></td></tr>
+<tr class="separator:a934efa774730583ab7093d98c758a9d5"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a865395d695aac1fba36f5dad8aa05814"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a865395d695aac1fba36f5dad8aa05814">H3_GetView</a> (H3Handle h3, float *x, float *y, float *w, float *h, float *vpw, float *vph)</td></tr>
+<tr class="memdesc:a865395d695aac1fba36f5dad8aa05814"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gets the current view properties.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a865395d695aac1fba36f5dad8aa05814">More...</a><br></td></tr>
+<tr class="separator:a865395d695aac1fba36f5dad8aa05814"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:ab783f09a7c063a4d3247e027058f2a7e"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ab783f09a7c063a4d3247e027058f2a7e">H3_SetView</a> (H3Handle h3, SH3Transform *transform, float w, float h)</td></tr>
+<tr class="memdesc:ab783f09a7c063a4d3247e027058f2a7e"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the current view properties.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ab783f09a7c063a4d3247e027058f2a7e">More...</a><br></td></tr>
+<tr class="separator:ab783f09a7c063a4d3247e027058f2a7e"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:a6a22be026409b105e1c557539b0fee0c"><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a6a22be026409b105e1c557539b0fee0c">H3_SetView2</a> (H3Handle h3, float x, float y, float w, float h)</td></tr>
+<tr class="memdesc:a6a22be026409b105e1c557539b0fee0c"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the current view properties.  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a6a22be026409b105e1c557539b0fee0c">More...</a><br></td></tr>
+<tr class="separator:a6a22be026409b105e1c557539b0fee0c"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+<tr class="memitem:aaf43786b7a95d9f5097ec62aa9b04289"><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aaf43786b7a95d9f5097ec62aa9b04289">H3_DoFrame</a> (H3Handle h3, H3Handle scene)</td></tr>
+<tr class="memdesc:aaf43786b7a95d9f5097ec62aa9b04289"><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Processes a full frame (init, preupdate, physics step, update, draw)  <a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aaf43786b7a95d9f5097ec62aa9b04289">More...</a><br></td></tr>
+<tr class="separator:aaf43786b7a95d9f5097ec62aa9b04289"><td class="memSeparator" colspan="2">&nbsp;</td></tr>
+</tbody></table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a670edc4fd4c454cfd03a0dba010ff983" name="a670edc4fd4c454cfd03a0dba010ff983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a670edc4fd4c454cfd03a0dba010ff983">◆&nbsp;</a></span>H3_BOX_COLLIDER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define H3_BOX_COLLIDER</td>
+          <td>(</td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname">DT, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname">W, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname">H, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname">A, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname">TRIG&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    ((<a class="code hl_struct" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_collider_desc.html">SH3ColliderDesc</a>) { \</div>
+<div class="line">    .dynamicsType = DT, \</div>
+<div class="line">    .shapeType = CST_Box, \</div>
+<div class="line">    .shapeData = { .box = { .width = W, .height = H, .anchor = A }}, \</div>
+<div class="line">    .isTrigger = TRIG \</div>
+<div class="line">})</div>
+<div class="ttc" id="astruct_s_h3_collider_desc_html"><div class="ttname"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_collider_desc.html">SH3ColliderDesc</a></div><div class="ttdef"><b>Definition:</b> h3.h:106</div></div>
+</div><!-- fragment --><p>Circle collider macro </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">DT</td><td>The dynamics type as a EColliderDynamicsType </td></tr>
+    <tr><td class="paramname">W</td><td>The box's width in world units </td></tr>
+    <tr><td class="paramname">H</td><td>The box's height in world units </td></tr>
+    <tr><td class="paramname">A</td><td>The box's anchor point (see EH3Anchor) </td></tr>
+    <tr><td class="paramname">TRIG</td><td>true if this collider should be a trigger, false otherwise </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abce2e24ce19dd36f6fbc59e9e455e1ef" name="abce2e24ce19dd36f6fbc59e9e455e1ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#abce2e24ce19dd36f6fbc59e9e455e1ef">◆&nbsp;</a></span>H3_CIRCLE_COLLIDER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define H3_CIRCLE_COLLIDER</td>
+          <td>(</td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname">DT, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname">R, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname">TRIG&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    ((<a class="code hl_struct" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_collider_desc.html">SH3ColliderDesc</a>) { \</div>
+<div class="line">    .dynamicsType = DT, \</div>
+<div class="line">    .shapeType = CST_Circle, \</div>
+<div class="line">    .shapeData = { .circle = { .radius = R }}, \</div>
+<div class="line">    .isTrigger = TRIG \</div>
+<div class="line">})</div>
+</div><!-- fragment --><p>Circle collider macro </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">DT</td><td>The dynamics type as a EColliderDynamicsType </td></tr>
+    <tr><td class="paramname">R</td><td>The circle's radius in world units </td></tr>
+    <tr><td class="paramname">TRIG</td><td>true if this collider should be a trigger, false otherwise </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab3e6136277ed43546eae3f2bf28402a8" name="ab3e6136277ed43546eae3f2bf28402a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ab3e6136277ed43546eae3f2bf28402a8">◆&nbsp;</a></span>H3_COLLIDER_COMPONENT_FLAG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define H3_COLLIDER_COMPONENT_FLAG&nbsp;&nbsp;&nbsp;0x10000000</td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Hydrogen3 - The 2D game engine for La Horde </p>
+
+</div>
+</div>
+<a id="ae5cc26d014fe9456edb7a15a815392cc" name="ae5cc26d014fe9456edb7a15a815392cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ae5cc26d014fe9456edb7a15a815392cc">◆&nbsp;</a></span>H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define H3_DECLARE_COMPONENT_PROPERTY_ACCESSORS_RW</td>
+          <td>(</td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname">C, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname">T, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname">N&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    T C##_Get##N(<span class="keywordtype">void</span>* properties); \</div>
+<div class="line">    void C##_Set##N(<span class="keywordtype">void</span>* properties, T value);</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad0d18604a60c1b90716a0155a0599428" name="ad0d18604a60c1b90716a0155a0599428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ad0d18604a60c1b90716a0155a0599428">◆&nbsp;</a></span>H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">#define H3_DEFINE_COMPONENT_PROPERTY_ACCESSORS_RW</td>
+          <td>(</td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname">C, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname">T, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname">N&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    T C##_Get##N(<span class="keywordtype">void</span>* properties) { <span class="keywordflow">return</span> ((C##_Properties*)properties)-&gt;N; } \</div>
+<div class="line">    void C##_Set##N(<span class="keywordtype">void</span>* properties, T value) { ((C##_Properties*)properties)-&gt;N = value; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="aa9b4c8fa5ee256603deb769bf29a71e4" name="aa9b4c8fa5ee256603deb769bf29a71e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa9b4c8fa5ee256603deb769bf29a71e4">◆&nbsp;</a></span>EH3Anchor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa9b4c8fa5ee256603deb769bf29a71e4">EH3Anchor</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Anchor flag. A full anchor is a bitwise OR of a horizontal and a vertical anchor flag, ie. (A_Center | A_Bottom) </p>
+
+</div>
+</div>
+<a id="aded5538abe942e1c47a6c5fa4f21d01f" name="aded5538abe942e1c47a6c5fa4f21d01f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aded5538abe942e1c47a6c5fa4f21d01f">◆&nbsp;</a></span>EH3ColliderDynamicsType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aded5538abe942e1c47a6c5fa4f21d01f">EH3ColliderDynamicsType</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Collider dynamics type. This influences how the physics engine considers the collider. </p>
+<table class="fieldtable">
+<tbody><tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aded5538abe942e1c47a6c5fa4f21d01fac01e341368923a0445fa3266e263dd15" name="aded5538abe942e1c47a6c5fa4f21d01fac01e341368923a0445fa3266e263dd15"></a>CDT_Static&nbsp;</td><td class="fielddoc"><p>Static collider (will never move) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aded5538abe942e1c47a6c5fa4f21d01fae5b232b2719d9d8e5fefe4b6c60e9f88" name="aded5538abe942e1c47a6c5fa4f21d01fae5b232b2719d9d8e5fefe4b6c60e9f88"></a>CDT_Kinematic&nbsp;</td><td class="fielddoc"><p>Kinematic collider (can be moved by code) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aded5538abe942e1c47a6c5fa4f21d01fad454a41a8c81ce3a992a8ca45e3ad88f" name="aded5538abe942e1c47a6c5fa4f21d01fad454a41a8c81ce3a992a8ca45e3ad88f"></a>CDT_Dynamic&nbsp;</td><td class="fielddoc"><p>Dynamic collider (can be moved by code or by the physics engine) </p>
+</td></tr>
+</tbody></table>
+
+</div>
+</div>
+<a id="a218e114ad8d700a9b9fb5e5772bf6a22" name="a218e114ad8d700a9b9fb5e5772bf6a22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a218e114ad8d700a9b9fb5e5772bf6a22">◆&nbsp;</a></span>EH3ColliderShapeType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a218e114ad8d700a9b9fb5e5772bf6a22">EH3ColliderShapeType</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Collider shapes. Only supporting circles and boxes (rectangles) for now. </p>
+
+</div>
+</div>
+<a id="a6dd0fc95449dd3b76790716d35f82d50" name="a6dd0fc95449dd3b76790716d35f82d50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a6dd0fc95449dd3b76790716d35f82d50">◆&nbsp;</a></span>EH3Key</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a6dd0fc95449dd3b76790716d35f82d50">EH3Key</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Keyboard keys </p>
+
+</div>
+</div>
+<a id="aca8ad19cdc464f8bc127841e2b0b22b4" name="aca8ad19cdc464f8bc127841e2b0b22b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aca8ad19cdc464f8bc127841e2b0b22b4">◆&nbsp;</a></span>EH3MouseButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">enum <a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aca8ad19cdc464f8bc127841e2b0b22b4">EH3MouseButton</a></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<p>Mouse buttons </p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aaf43786b7a95d9f5097ec62aa9b04289" name="aaf43786b7a95d9f5097ec62aa9b04289"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aaf43786b7a95d9f5097ec62aa9b04289">◆&nbsp;</a></span>H3_DoFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool H3_DoFrame </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>h3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>scene</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Processes a full frame (init, preupdate, physics step, update, draw) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">h3</td><td>The main H3 handle </td></tr>
+    <tr><td class="paramname">scene</td><td>The scene to draw this frame </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the window hasn't been closed (and thus we should keep going), false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a0bad8da1fcb496c8a71aaa40b4e609bb" name="a0bad8da1fcb496c8a71aaa40b4e609bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a0bad8da1fcb496c8a71aaa40b4e609bb">◆&nbsp;</a></span>H3_Font_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Font_Destroy </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Destroys a font. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">handle</td><td>The font to destroy </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a30563a349ff8feca90d35a063945a359" name="a30563a349ff8feca90d35a063945a359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a30563a349ff8feca90d35a063945a359">◆&nbsp;</a></span>H3_Font_Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">H3Handle H3_Font_Load </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Loads a font. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">path</td><td>The path to the font file to load </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Handle to the loaded font </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>As of November 2021, only TrueType (.ttf) fonts are supported. </dd></dl>
+
+</div>
+</div>
+<a id="a934efa774730583ab7093d98c758a9d5" name="a934efa774730583ab7093d98c758a9d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a934efa774730583ab7093d98c758a9d5">◆&nbsp;</a></span>H3_Font_Printf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Font_Printf </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>h3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_text_properties.html">SH3TextProperties</a>&nbsp;</td>
+          <td class="paramname"><em>properties</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SH3Transform *&nbsp;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"><em>...</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Draws a text to the window using the specified properties. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">h3</td><td>The main H3 handle </td></tr>
+    <tr><td class="paramname">properties</td><td>The text properties to use to draw this text </td></tr>
+    <tr><td class="paramname">transform</td><td>The transform to use as a reference to draw this text </td></tr>
+    <tr><td class="paramname">format</td><td>The text to draw, printf-style </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8ec4578617e36e582d2aa12eb8250d8b" name="a8ec4578617e36e582d2aa12eb8250d8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a8ec4578617e36e582d2aa12eb8250d8b">◆&nbsp;</a></span>H3_GetDeltaTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">float H3_GetDeltaTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the time in seconds since the previous frame started </dd></dl>
+
+</div>
+</div>
+<a id="a7481c022516df17b0021c7e886a6017f" name="a7481c022516df17b0021c7e886a6017f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a7481c022516df17b0021c7e886a6017f">◆&nbsp;</a></span>H3_GetTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">float H3_GetTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the time in seconds since H3_Init was called </dd></dl>
+
+</div>
+</div>
+<a id="a865395d695aac1fba36f5dad8aa05814" name="a865395d695aac1fba36f5dad8aa05814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a865395d695aac1fba36f5dad8aa05814">◆&nbsp;</a></span>H3_GetView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_GetView </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>h3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&nbsp;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&nbsp;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&nbsp;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&nbsp;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&nbsp;</td>
+          <td class="paramname"><em>vpw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&nbsp;</td>
+          <td class="paramname"><em>vph</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Gets the current view properties. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">h3</td><td>The main H3 handle </td></tr>
+    <tr><td class="paramname">x</td><td>pointer to write the view center's X coordinate to </td></tr>
+    <tr><td class="paramname">y</td><td>pointer to write the view center's Y coordinate to </td></tr>
+    <tr><td class="paramname">w</td><td>pointer to write the view's width to </td></tr>
+    <tr><td class="paramname">h</td><td>pointer to write the view's height to </td></tr>
+    <tr><td class="paramname">vpw</td><td>pointer to write the window's width (in pixels) to </td></tr>
+    <tr><td class="paramname">vph</td><td>pointer to write the windows's height (in pixels) to </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acc936be4e99f64c4ffdce295d7ced8ba" name="acc936be4e99f64c4ffdce295d7ced8ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#acc936be4e99f64c4ffdce295d7ced8ba">◆&nbsp;</a></span>H3_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">H3Handle H3_Init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_init_params.html">SH3InitParams</a>&nbsp;</td>
+          <td class="paramname"><em>params</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Initializes H3 and opens a window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">params</td><td>The initialization parameters </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The main handle to H3 </dd></dl>
+
+</div>
+</div>
+<a id="a238b58fabe3c6172cd7c61b3f784ac8c" name="a238b58fabe3c6172cd7c61b3f784ac8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a238b58fabe3c6172cd7c61b3f784ac8c">◆&nbsp;</a></span>H3_Input_GetMousePos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Input_GetMousePos </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>h3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"><em>y</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Returns true on the first frame the key is down, false otherwise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">h3</td><td>The window handle to test against </td></tr>
+    <tr><td class="paramname">x</td><td>A pointer to the horizontal coordinate, in pixels </td></tr>
+    <tr><td class="paramname">y</td><td>A pointer to the vertical coordinate, in pixels </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1e4609d10c05b8759c7de7027a065620" name="a1e4609d10c05b8759c7de7027a065620"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a1e4609d10c05b8759c7de7027a065620">◆&nbsp;</a></span>H3_Input_IsKeyDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool H3_Input_IsKeyDown </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a6dd0fc95449dd3b76790716d35f82d50">EH3Key</a>&nbsp;</td>
+          <td class="paramname"><em>k</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">k</td><td>the keyboard key to test </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the key is down, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ad751473f8992b9fa0058733e1649d3fa" name="ad751473f8992b9fa0058733e1649d3fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ad751473f8992b9fa0058733e1649d3fa">◆&nbsp;</a></span>H3_Input_IsKeyPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool H3_Input_IsKeyPressed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a6dd0fc95449dd3b76790716d35f82d50">EH3Key</a>&nbsp;</td>
+          <td class="paramname"><em>k</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">k</td><td>the keyboard key to test </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true on the first frame the key is down, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a5dbb785c24f6eb70864d3aa66299bb31" name="a5dbb785c24f6eb70864d3aa66299bb31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a5dbb785c24f6eb70864d3aa66299bb31">◆&nbsp;</a></span>H3_Input_IsMouseBtnDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool H3_Input_IsMouseBtnDown </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aca8ad19cdc464f8bc127841e2b0b22b4">EH3MouseButton</a>&nbsp;</td>
+          <td class="paramname"><em>btn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Returns true if the mouse button is down, false otherwise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">k</td><td>the mouse button to test </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a84b997bd7d20ea49c659dad617d87b53" name="a84b997bd7d20ea49c659dad617d87b53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a84b997bd7d20ea49c659dad617d87b53">◆&nbsp;</a></span>H3_Input_IsMouseBtnPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool H3_Input_IsMouseBtnPressed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aca8ad19cdc464f8bc127841e2b0b22b4">EH3MouseButton</a>&nbsp;</td>
+          <td class="paramname"><em>btn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Returns true on the first frame the mouse button is down, false otherwise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">k</td><td>the mouse button to test </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a58fa895696800141d5e7ce7750c1039f" name="a58fa895696800141d5e7ce7750c1039f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a58fa895696800141d5e7ce7750c1039f">◆&nbsp;</a></span>H3_Listener_SetLocation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Listener_SetLocation </td>
+          <td>(</td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>px</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>py</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>angle</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets the sound listener's location. All spatialized sounds will use this listener as a reference. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">px</td><td>The position to set to the listener </td></tr>
+    <tr><td class="paramname">py</td><td>The position to set to the listener </td></tr>
+    <tr><td class="paramname">angle</td><td>The rotation angle to set to the listener </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa76680cbe662ebffce13d9746554fc25" name="aa76680cbe662ebffce13d9746554fc25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa76680cbe662ebffce13d9746554fc25">◆&nbsp;</a></span>H3_Listener_SetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Listener_SetPosition </td>
+          <td>(</td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>px</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>py</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets the sound listener's position. All spatialized sounds will use this listener as a reference. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">px</td><td>The position to set to the listener </td></tr>
+    <tr><td class="paramname">py</td><td>The position to set to the listener </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeb8e8c025254901740a9bdd1ad8699a7" name="aeb8e8c025254901740a9bdd1ad8699a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aeb8e8c025254901740a9bdd1ad8699a7">◆&nbsp;</a></span>H3_Listener_SetRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Listener_SetRotation </td>
+          <td>(</td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets the sound listener's rotation angle. All spatialized sounds will use this listener as a reference. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">angle</td><td>The rotation angle to set to the listener </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac80adfd7353fc9e78d80f76076e136ed" name="ac80adfd7353fc9e78d80f76076e136ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ac80adfd7353fc9e78d80f76076e136ed">◆&nbsp;</a></span>H3_Map_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Map_Destroy </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle *&nbsp;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Destroys a map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">handle</td><td>The map to destroy </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2b8bde53e5a4eb8812e814fb64232643" name="a2b8bde53e5a4eb8812e814fb64232643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a2b8bde53e5a4eb8812e814fb64232643">◆&nbsp;</a></span>H3_Map_Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Map_Draw </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>h3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>map</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Draws a full map, using (0, 0) as origin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">h3</td><td>The main H3 handle </td></tr>
+    <tr><td class="paramname">map</td><td>The map to draw </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a790e9eba174f65e125082158de4c6a93" name="a790e9eba174f65e125082158de4c6a93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a790e9eba174f65e125082158de4c6a93">◆&nbsp;</a></span>H3_Map_DrawLayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Map_DrawLayer </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>h3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"><em>layerId</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Draws a single map layer, using (0, 0) as origin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">h3</td><td>The main H3 handle </td></tr>
+    <tr><td class="paramname">map</td><td>The map to draw a layer from </td></tr>
+    <tr><td class="paramname">layerId</td><td>The layer ID to draw </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9c9c12d3e714c9cdfc892244f19c8adb" name="a9c9c12d3e714c9cdfc892244f19c8adb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a9c9c12d3e714c9cdfc892244f19c8adb">◆&nbsp;</a></span>H3_Map_GetLayerFromName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">size_t H3_Map_GetLayerFromName </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"><em>layerName</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Gets the ID of a layer from its name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">map</td><td>The map to get the layer ID from </td></tr>
+    <tr><td class="paramname">layerName</td><td>The name of the map layer to get the ID of </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The ID of the specified layer, or (size_t)-1 if not found </dd></dl>
+
+</div>
+</div>
+<a id="adbd194ff1b03116c75cf1ae8f7007929" name="adbd194ff1b03116c75cf1ae8f7007929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#adbd194ff1b03116c75cf1ae8f7007929">◆&nbsp;</a></span>H3_Map_Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">H3Handle H3_Map_Load </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Loads a map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">path</td><td>The path to the TMX map file </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Handle to the loaded map </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>As of November 2021, "Collection of images" maps are not supported. </dd></dl>
+
+</div>
+</div>
+<a id="a571f29bed0ad7dd73bc9a83999960373" name="a571f29bed0ad7dd73bc9a83999960373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a571f29bed0ad7dd73bc9a83999960373">◆&nbsp;</a></span>H3_Map_RegisterObjectLayerForPhysicsInScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Map_RegisterObjectLayerForPhysicsInScene </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>scene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"><em>layerName</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Register all shapes in a specified object layer as static colliders in a scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">scene</td><td>The scene in which to add the colliders to </td></tr>
+    <tr><td class="paramname">map</td><td>The map to get the colliders from </td></tr>
+    <tr><td class="paramname">layerName</td><td>The name of the map layer to get the colliders from </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>As of November 2021, these shapes do not support rotation and supported shapes are boxes and circles (aka. ellipses with width = height) </dd></dl>
+
+</div>
+</div>
+<a id="a82348883e1d7373b90e3f980e90b77b3" name="a82348883e1d7373b90e3f980e90b77b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a82348883e1d7373b90e3f980e90b77b3">◆&nbsp;</a></span>H3_Music_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Music_Destroy </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Destroys a music. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">handle</td><td>The music to destroy </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a68d3b096cc83ce06e349f6fdb8214f4c" name="a68d3b096cc83ce06e349f6fdb8214f4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a68d3b096cc83ce06e349f6fdb8214f4c">◆&nbsp;</a></span>H3_Music_Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">H3Handle H3_Music_Load </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Loads a music. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">path</td><td>The path to the music file to load </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Handle to the loaded music </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>As of November 2021, wav, flac and ogg (but not mp3) files are supported. Moreover, while sounds are entirely loaded to memory, musics are streamed for disk, so this is preferable for long-duration audio files. </dd></dl>
+
+</div>
+</div>
+<a id="a83e535be4a06872296d58db83dc80b76" name="a83e535be4a06872296d58db83dc80b76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a83e535be4a06872296d58db83dc80b76">◆&nbsp;</a></span>H3_Music_Play()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Music_Play </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>music</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>volume</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"><em>loop</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Plays a music. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">music</td><td>The music to play </td></tr>
+    <tr><td class="paramname">volume</td><td>The volume to play the music at, between 0.0f and 1.0f </td></tr>
+    <tr><td class="paramname">loop</td><td>True to play the music as an infinite loop, false to only play once </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ace53792a3dcfe1af5cf666dbd3718e03" name="ace53792a3dcfe1af5cf666dbd3718e03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ace53792a3dcfe1af5cf666dbd3718e03">◆&nbsp;</a></span>H3_Music_Stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Music_Stop </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>music</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Stops a music. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">music</td><td>The music to stop playing </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a72b65314a6dc5fd5bf13e92345f7eab4" name="a72b65314a6dc5fd5bf13e92345f7eab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a72b65314a6dc5fd5bf13e92345f7eab4">◆&nbsp;</a></span>H3_Object_AddComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_AddComponent </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_component.html">SH3Component</a>&nbsp;</td>
+          <td class="paramname"><em>component</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Adds a component to the object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to add a component to </td></tr>
+    <tr><td class="paramname">component</td><td>The component to add. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_component.html">SH3Component</a> </dd></dl>
+
+</div>
+</div>
+<a id="a9699066f0a9db602ea3e4db9ff6e8c6a" name="a9699066f0a9db602ea3e4db9ff6e8c6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a9699066f0a9db602ea3e4db9ff6e8c6a">◆&nbsp;</a></span>H3_Object_AddVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_AddVelocity </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>vx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>vy</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Add to an object's linear velocity. Only valid if this object has physics enabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to add the linear velocity to </td></tr>
+    <tr><td class="paramname">vx</td><td>The horizontal component of the velocity to add </td></tr>
+    <tr><td class="paramname">vy</td><td>The vertical component of the velocity to add </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aab0538f0d9433790c188dc0b70dd1dfd" name="aab0538f0d9433790c188dc0b70dd1dfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aab0538f0d9433790c188dc0b70dd1dfd">◆&nbsp;</a></span>H3_Object_Create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">H3Handle H3_Object_Create </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>scene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"><em>objName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>parent</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Creates a new object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">scene</td><td>The scene to create the object into </td></tr>
+    <tr><td class="paramname">objName</td><td>The name of the object to create </td></tr>
+    <tr><td class="paramname">parent</td><td>The parent of the new object, or NULL to make it a root object </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new object </dd></dl>
+
+</div>
+</div>
+<a id="ad2be55b2d409cc5e0723295e41bd8224" name="ad2be55b2d409cc5e0723295e41bd8224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ad2be55b2d409cc5e0723295e41bd8224">◆&nbsp;</a></span>H3_Object_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_Destroy </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"><em>recursive</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Destroy an object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to destroy </td></tr>
+    <tr><td class="paramname">recursive</td><td>True to destroy all children objects as well, false otherwise </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1b250b78cd9af1be5954c6dd7a17f376" name="a1b250b78cd9af1be5954c6dd7a17f376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a1b250b78cd9af1be5954c6dd7a17f376">◆&nbsp;</a></span>H3_Object_DisablePhysics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_DisablePhysics </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Disables physics for this component. Once called, this object will no longer be affected by gravity and will no longer receive OnCollisionEnter/OnCollisionLeave (or Trigger variants) events. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to disable physics for </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_collider_desc.html">SH3ColliderDesc</a> </dd></dl>
+
+</div>
+</div>
+<a id="a1e8b973e9f0c6aa1ffef9fb266092afe" name="a1e8b973e9f0c6aa1ffef9fb266092afe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a1e8b973e9f0c6aa1ffef9fb266092afe">◆&nbsp;</a></span>H3_Object_EnablePhysics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_EnablePhysics </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_collider_desc.html">SH3ColliderDesc</a>&nbsp;</td>
+          <td class="paramname"><em>desc</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Enables physics for this component. Once called, this object will be affected by gravity and will receive OnCollisionEnter/OnCollisionLeave (and Trigger variants) events. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to enable physics for </td></tr>
+    <tr><td class="paramname">desc</td><td>The collider for this object </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_collider_desc.html">SH3ColliderDesc</a> </dd></dl>
+
+</div>
+</div>
+<a id="a7f09b67243e470d418f0806c01ca68d1" name="a7f09b67243e470d418f0806c01ca68d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a7f09b67243e470d418f0806c01ca68d1">◆&nbsp;</a></span>H3_Object_EnablePhysicsEx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_EnablePhysicsEx </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_collider_desc.html">SH3ColliderDesc</a> *&nbsp;</td>
+          <td class="paramname"><em>descList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&nbsp;</td>
+          <td class="paramname"><em>numShapes</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Enables physics for this component using multiple shapes to make a more complex collider. Once called, this object will be affected by gravity and will receive OnCollisionEnter/OnCollisionLeave (and Trigger variants) events. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to enable physics for </td></tr>
+    <tr><td class="paramname">descList</td><td>An array of colliders for this object </td></tr>
+    <tr><td class="paramname">numShapes</td><td>The number of colliders in the array </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_collider_desc.html">SH3ColliderDesc</a> </dd></dl>
+
+</div>
+</div>
+<a id="a314b558cab2947edd801b0394bd6f185" name="a314b558cab2947edd801b0394bd6f185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a314b558cab2947edd801b0394bd6f185">◆&nbsp;</a></span>H3_Object_Get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">H3Handle H3_Object_Get </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>scene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"><em>objName</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Find an object in a scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">scene</td><td>The scene to look for the object in </td></tr>
+    <tr><td class="paramname">objName</td><td>The name of the object to look for </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An object, or a NULL handle if none is found </dd></dl>
+
+</div>
+</div>
+<a id="a9ce8369f582ba4c85e7fa22e9dd59107" name="a9ce8369f582ba4c85e7fa22e9dd59107"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a9ce8369f582ba4c85e7fa22e9dd59107">◆&nbsp;</a></span>H3_Object_GetComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/struct_s_h3_component.html">SH3Component</a> * H3_Object_GetComponent </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&nbsp;</td>
+          <td class="paramname"><em>componentId</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Gets an object's component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to get a component from </td></tr>
+    <tr><td class="paramname">componentId</td><td>The component TypeID to look for. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the specified component or NULL if the object does not have a component of this type ID </dd></dl>
+
+</div>
+</div>
+<a id="a49ac6c9c267f5e0ab583f8ec3f78dda6" name="a49ac6c9c267f5e0ab583f8ec3f78dda6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a49ac6c9c267f5e0ab583f8ec3f78dda6">◆&nbsp;</a></span>H3_Object_GetEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool H3_Object_GetEnabled </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Gets the Enabled state of an object. A disabled object is neither shown nor updated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to enable/disable </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if enabled, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="acc026ea2864e72584ee2438841f09772" name="acc026ea2864e72584ee2438841f09772"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#acc026ea2864e72584ee2438841f09772">◆&nbsp;</a></span>H3_Object_GetName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">const char * H3_Object_GetName </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Gets an object's name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to get the name of </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The object's name </dd></dl>
+
+</div>
+</div>
+<a id="aca9193a0e6cbf2a697ccfdd6c9815616" name="aca9193a0e6cbf2a697ccfdd6c9815616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aca9193a0e6cbf2a697ccfdd6c9815616">◆&nbsp;</a></span>H3_Object_GetRenderOrder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">int32_t H3_Object_GetRenderOrder </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Gets an object's render order. Objects are rendered in ascending render order, so the higher the render order is, the later (and the more above the others) it is drawn. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to get the render order of </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The object's render order </dd></dl>
+
+</div>
+</div>
+<a id="acb40277e4dd120ac90a3c0dceb5bbd53" name="acb40277e4dd120ac90a3c0dceb5bbd53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#acb40277e4dd120ac90a3c0dceb5bbd53">◆&nbsp;</a></span>H3_Object_GetTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">SH3Transform * H3_Object_GetTransform </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Gets an object's transform (Translation, rotation, scale) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to get the transform of </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The object's transform as an opaque pointer </dd></dl>
+
+</div>
+</div>
+<a id="aafefbee59efd494249fb2c16d1a60e6c" name="aafefbee59efd494249fb2c16d1a60e6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aafefbee59efd494249fb2c16d1a60e6c">◆&nbsp;</a></span>H3_Object_GetVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_GetVelocity </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&nbsp;</td>
+          <td class="paramname"><em>vx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&nbsp;</td>
+          <td class="paramname"><em>vy</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Retrieves an object's linear velocity. Only valid if this object has physics enabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to get the linear velocity from </td></tr>
+    <tr><td class="paramname">vx</td><td>Pointer to the horizontal component of the velocity </td></tr>
+    <tr><td class="paramname">vy</td><td>Pointer to the vertical component of the velocity </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9e2d4eccceb5567697cfd951b8615316" name="a9e2d4eccceb5567697cfd951b8615316"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a9e2d4eccceb5567697cfd951b8615316">◆&nbsp;</a></span>H3_Object_HasComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool H3_Object_HasComponent </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&nbsp;</td>
+          <td class="paramname"><em>componentId</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Gets whether an object has a component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to look for a component into </td></tr>
+    <tr><td class="paramname">componentId</td><td>The component TypeID to look for. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the object has a component with this ID, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a4bbc759d480b18a783d86957ef7fd17a" name="a4bbc759d480b18a783d86957ef7fd17a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a4bbc759d480b18a783d86957ef7fd17a">◆&nbsp;</a></span>H3_Object_RemoveComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">bool H3_Object_RemoveComponent </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&nbsp;</td>
+          <td class="paramname"><em>componentId</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Removes a component from the object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">componentId</td><td>The component TypeID to look for. </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if a component was removed, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a86c624210c4bdf524ab544ef9a95ddd9" name="a86c624210c4bdf524ab544ef9a95ddd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a86c624210c4bdf524ab544ef9a95ddd9">◆&nbsp;</a></span>H3_Object_ResetTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_ResetTransform </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Resets an object's transform (no translation, no rotation, scale 1:1). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to reset the transform of </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab30f47d24e8cfcadb21f17c8440223f9" name="ab30f47d24e8cfcadb21f17c8440223f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ab30f47d24e8cfcadb21f17c8440223f9">◆&nbsp;</a></span>H3_Object_Rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_Rotate </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>angle</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Rotates an object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to rotate </td></tr>
+    <tr><td class="paramname">angle</td><td>The rotation angle </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa14ba33e38f1b88054073d2c17b913dc" name="aa14ba33e38f1b88054073d2c17b913dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa14ba33e38f1b88054073d2c17b913dc">◆&nbsp;</a></span>H3_Object_Scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_Scale </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>s</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Scales an object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to scale </td></tr>
+    <tr><td class="paramname">x</td><td>The horizontal component of the scale </td></tr>
+    <tr><td class="paramname">y</td><td>The vertical component of the scale </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aec5d2e9554c0514ed7f9ee274ef82231" name="aec5d2e9554c0514ed7f9ee274ef82231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aec5d2e9554c0514ed7f9ee274ef82231">◆&nbsp;</a></span>H3_Object_ScaleNonUniform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_ScaleNonUniform </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>y</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets an object's scale. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to set the scale of </td></tr>
+    <tr><td class="paramname">x</td><td>The horizontal component of the scale </td></tr>
+    <tr><td class="paramname">y</td><td>The vertical component of the scale </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7e9be25dd07a9e120c8e0b8d1447bd51" name="a7e9be25dd07a9e120c8e0b8d1447bd51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a7e9be25dd07a9e120c8e0b8d1447bd51">◆&nbsp;</a></span>H3_Object_SetEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_SetEnabled </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"><em>enabled</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Enables or disables an object. A disabled object is neither shown nor updated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to enable/disable </td></tr>
+    <tr><td class="paramname">enabled</td><td>true to enable, false to disable </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0f011c1e4b0da2af82e0f818b4874325" name="a0f011c1e4b0da2af82e0f818b4874325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a0f011c1e4b0da2af82e0f818b4874325">◆&nbsp;</a></span>H3_Object_SetRenderOrder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_SetRenderOrder </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&nbsp;</td>
+          <td class="paramname"><em>renderOrder</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets an object's render order. Objects are rendered in ascending render order, so the higher the render order is, the later (and the more above the others) it is drawn. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to set the render order to </td></tr>
+    <tr><td class="paramname">renderOrder</td><td>The render order to set to this object </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adef4f23ccb48d35ab47d6877c6d0e0b3" name="adef4f23ccb48d35ab47d6877c6d0e0b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#adef4f23ccb48d35ab47d6877c6d0e0b3">◆&nbsp;</a></span>H3_Object_SetRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_SetRotation </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>angle</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets an object's rotation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to set the rotation of </td></tr>
+    <tr><td class="paramname">angle</td><td>The rotation angle </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af46b02abafe7733337e5fafb4eded723" name="af46b02abafe7733337e5fafb4eded723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#af46b02abafe7733337e5fafb4eded723">◆&nbsp;</a></span>H3_Object_SetScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_SetScale </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>s</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets an object's scale. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to set the scale of </td></tr>
+    <tr><td class="paramname">s</td><td>A uniform scale value </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a369a09a8ea7dc0574dac91cc4e2f024d" name="a369a09a8ea7dc0574dac91cc4e2f024d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a369a09a8ea7dc0574dac91cc4e2f024d">◆&nbsp;</a></span>H3_Object_SetTranslation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_SetTranslation </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>y</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets an object's translation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to set the translation of </td></tr>
+    <tr><td class="paramname">x</td><td>The horizontal component of the translation </td></tr>
+    <tr><td class="paramname">y</td><td>The vertical component of the translation </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a07e003484aa00833d0bbcdb483505ed6" name="a07e003484aa00833d0bbcdb483505ed6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a07e003484aa00833d0bbcdb483505ed6">◆&nbsp;</a></span>H3_Object_SetVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_SetVelocity </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>vx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>vy</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets an object's linear velocity. Only valid if this object has physics enabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to set the linear velocity to </td></tr>
+    <tr><td class="paramname">vx</td><td>The horizontal component of the velocity </td></tr>
+    <tr><td class="paramname">vy</td><td>The vertical component of the velocity </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac1f66b3974b9548a81ee0150d68f34f7" name="ac1f66b3974b9548a81ee0150d68f34f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ac1f66b3974b9548a81ee0150d68f34f7">◆&nbsp;</a></span>H3_Object_Translate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Object_Translate </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>y</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Translates an object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">object</td><td>The object to translate </td></tr>
+    <tr><td class="paramname">x</td><td>The horizontal component of the translation </td></tr>
+    <tr><td class="paramname">y</td><td>The vertical component of the translation </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8c9eeda84ee590a6455f363259e60155" name="a8c9eeda84ee590a6455f363259e60155"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a8c9eeda84ee590a6455f363259e60155">◆&nbsp;</a></span>H3_Scene_Create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">H3Handle H3_Scene_Create </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>h3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"><em>physicsLocksRotation</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Creates a new scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">h3</td><td>The main H3 handle </td></tr>
+    <tr><td class="paramname">physicsLocksRotation</td><td>If true, objects colliding in this scene won't get any angular velocity from their collisions </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new scene </dd></dl>
+
+</div>
+</div>
+<a id="a49e3441f9932768e29fa778c40bb1702" name="a49e3441f9932768e29fa778c40bb1702"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a49e3441f9932768e29fa778c40bb1702">◆&nbsp;</a></span>H3_Scene_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Scene_Destroy </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>scene</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Destroys a scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">scene</td><td>The scene to destroy </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a43b9a6f6d9078554a8ce45f6382e5adb" name="a43b9a6f6d9078554a8ce45f6382e5adb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a43b9a6f6d9078554a8ce45f6382e5adb">◆&nbsp;</a></span>H3_Scene_SetGravity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Scene_SetGravity </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>scene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>y</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets a scene's gravity, which can be in any direction and of any strength. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">scene</td><td>The scene to set the gravity into </td></tr>
+    <tr><td class="paramname">x</td><td>the horizontal value of gravity </td></tr>
+    <tr><td class="paramname">y</td><td>the vertical value of gravity </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab783f09a7c063a4d3247e027058f2a7e" name="ab783f09a7c063a4d3247e027058f2a7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ab783f09a7c063a4d3247e027058f2a7e">◆&nbsp;</a></span>H3_SetView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_SetView </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>h3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SH3Transform *&nbsp;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>h</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets the current view properties. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">h3</td><td>The main H3 handle </td></tr>
+    <tr><td class="paramname">transform</td><td>The transform to use as a reference position </td></tr>
+    <tr><td class="paramname">w</td><td>The view's width to </td></tr>
+    <tr><td class="paramname">h</td><td>The view's height to </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6a22be026409b105e1c557539b0fee0c" name="a6a22be026409b105e1c557539b0fee0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a6a22be026409b105e1c557539b0fee0c">◆&nbsp;</a></span>H3_SetView2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_SetView2 </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>h3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>h</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets the current view properties. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">h3</td><td>The main H3 handle </td></tr>
+    <tr><td class="paramname">x</td><td>The view center's X coordinate to </td></tr>
+    <tr><td class="paramname">y</td><td>The view center's Y coordinate to </td></tr>
+    <tr><td class="paramname">w</td><td>The view's width to </td></tr>
+    <tr><td class="paramname">h</td><td>The view's height to </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a85937e330220ec38fa7ea431a2630cb1" name="a85937e330220ec38fa7ea431a2630cb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a85937e330220ec38fa7ea431a2630cb1">◆&nbsp;</a></span>H3_Sound_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Sound_Destroy </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Destroys a sound. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">handle</td><td>The sound to destroy </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abeda51b1a83a27a8ea0aafb3d8f4634a" name="abeda51b1a83a27a8ea0aafb3d8f4634a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#abeda51b1a83a27a8ea0aafb3d8f4634a">◆&nbsp;</a></span>H3_Sound_Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">H3Handle H3_Sound_Load </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Loads a sound. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">path</td><td>The path to the sound file to load </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Handle to the loaded sound </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>As of November 2021, wav, flac and ogg (but not mp3) files are supported. </dd></dl>
+
+</div>
+</div>
+<a id="ae12c2a273e15a78c3ad021b8b2a977f4" name="ae12c2a273e15a78c3ad021b8b2a977f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ae12c2a273e15a78c3ad021b8b2a977f4">◆&nbsp;</a></span>H3_Sound_Play()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Sound_Play </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>snd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>volume</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"><em>loop</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Plays a sound (without spatialization) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">snd</td><td>The sound to play </td></tr>
+    <tr><td class="paramname">volume</td><td>The volume to play the sound at, between 0.0f and 1.0f </td></tr>
+    <tr><td class="paramname">loop</td><td>True to play the sound as an infinite loop, false to only play once </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0e8bda8a2d00cbd92dd14bcfd2f24a80" name="a0e8bda8a2d00cbd92dd14bcfd2f24a80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a0e8bda8a2d00cbd92dd14bcfd2f24a80">◆&nbsp;</a></span>H3_Sound_PlaySpatialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Sound_PlaySpatialized </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>snd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>volume</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>px</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>py</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"><em>loop</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Plays a sound (spatialized) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">snd</td><td>The sound to play </td></tr>
+    <tr><td class="paramname">volume</td><td>The volume to play the sound at, between 0.0f and 1.0f </td></tr>
+    <tr><td class="paramname">px</td><td>The position to play the sound from (horizontal component) </td></tr>
+    <tr><td class="paramname">py</td><td>The position to play the sound from (vertical component) </td></tr>
+    <tr><td class="paramname">loop</td><td>True to play the sound as an infinite loop, false to only play once </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Only mono sounds can be spatialized. Stereo sounds will be played non-spatialized. </dd></dl>
+
+</div>
+</div>
+<a id="a2dc0ac8f72d2edb068810ad4e9c298fa" name="a2dc0ac8f72d2edb068810ad4e9c298fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a2dc0ac8f72d2edb068810ad4e9c298fa">◆&nbsp;</a></span>H3_Sound_SetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Sound_SetPosition </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>snd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>px</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>py</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Sets a spatialized sound position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">snd</td><td>The sound to set the position of </td></tr>
+    <tr><td class="paramname">px</td><td>The position to set to the sound (horizontal component) </td></tr>
+    <tr><td class="paramname">py</td><td>The position to set to the sound (vertical component) </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a660f827eb1b4c86f4c9dab2facf16415" name="a660f827eb1b4c86f4c9dab2facf16415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a660f827eb1b4c86f4c9dab2facf16415">◆&nbsp;</a></span>H3_Sound_Stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Sound_Stop </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>snd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Stops a sound. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">snd</td><td>The sound to stop </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad6d7af8271fbbb6df600f5b4512a69af" name="ad6d7af8271fbbb6df600f5b4512a69af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ad6d7af8271fbbb6df600f5b4512a69af">◆&nbsp;</a></span>H3_Terminate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Terminate </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle *&nbsp;</td>
+          <td class="paramname"><em>h3</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Closes the window and deinitializes H3. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">h3</td><td>Pointer to the main handle as returned by H3_Init </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acd93f77224f81f41829ea5d0e7b4ed06" name="acd93f77224f81f41829ea5d0e7b4ed06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#acd93f77224f81f41829ea5d0e7b4ed06">◆&nbsp;</a></span>H3_Texture_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Texture_Destroy </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Destroys a texture. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">handle</td><td>The texture to destroy </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a317b12a0056502d357b0df1b2fa8f522" name="a317b12a0056502d357b0df1b2fa8f522"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a317b12a0056502d357b0df1b2fa8f522">◆&nbsp;</a></span>H3_Texture_Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Texture_Draw </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>h3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>px</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>py</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa9b4c8fa5ee256603deb769bf29a71e4">EH3Anchor</a>&nbsp;</td>
+          <td class="paramname"><em>anchor</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Draws a texture to screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">h3</td><td>Main H3 handle </td></tr>
+    <tr><td class="paramname">px</td><td>Horizontal position in world units </td></tr>
+    <tr><td class="paramname">py</td><td>Vertical position in world units </td></tr>
+    <tr><td class="paramname">texture</td><td>The texture to draw </td></tr>
+    <tr><td class="paramname">anchor</td><td>The anchor to use as a reference. px and py will define the position of the anchor </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab400a5fd9605647af9623e487d8d64cd" name="ab400a5fd9605647af9623e487d8d64cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ab400a5fd9605647af9623e487d8d64cd">◆&nbsp;</a></span>H3_Texture_DrawEx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Texture_DrawEx </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>h3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SH3Transform *&nbsp;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa9b4c8fa5ee256603deb769bf29a71e4">EH3Anchor</a>&nbsp;</td>
+          <td class="paramname"><em>anchor</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Draws a texture to screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">h3</td><td>Main H3 handle </td></tr>
+    <tr><td class="paramname">transform</td><td>Pointer to the transform to use </td></tr>
+    <tr><td class="paramname">texture</td><td>The texture to draw </td></tr>
+    <tr><td class="paramname">anchor</td><td>The anchor to use as a reference. transform will define the position of the anchor </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad34d163aeb0a45e83954d33dafff8309" name="ad34d163aeb0a45e83954d33dafff8309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#ad34d163aeb0a45e83954d33dafff8309">◆&nbsp;</a></span>H3_Texture_DrawRectEx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Texture_DrawRectEx </td>
+          <td>(</td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>h3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SH3Transform *&nbsp;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H3Handle&nbsp;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&nbsp;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#aa9b4c8fa5ee256603deb769bf29a71e4">EH3Anchor</a>&nbsp;</td>
+          <td class="paramname"><em>anchor</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Draws part of a texture to screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">h3</td><td>Main H3 handle </td></tr>
+    <tr><td class="paramname">transform</td><td>Pointer to the transform to use </td></tr>
+    <tr><td class="paramname">texture</td><td>The texture to draw </td></tr>
+    <tr><td class="paramname">x0</td><td>Upper-left corner to use inside the texture </td></tr>
+    <tr><td class="paramname">y0</td><td>Upper-left corner to use inside the texture </td></tr>
+    <tr><td class="paramname">x1</td><td>Lower-right corner to use inside the texture </td></tr>
+    <tr><td class="paramname">y1</td><td>Lower-right corner to use inside the texture </td></tr>
+    <tr><td class="paramname">anchor</td><td>The anchor to use as a reference. transform will define the position of the anchor </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a768b7c692ccd7ee53aede681e4e3b3e6" name="a768b7c692ccd7ee53aede681e4e3b3e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#a768b7c692ccd7ee53aede681e4e3b3e6">◆&nbsp;</a></span>H3_Texture_Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">H3Handle H3_Texture_Load </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&nbsp;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&nbsp;</td>
+          <td class="paramname"><em>height</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Loads a texture. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">path</td><td>The path to the image file </td></tr>
+    <tr><td class="paramname">width</td><td>A pointer to write the image's width to </td></tr>
+    <tr><td class="paramname">height</td><td>A pointer to write the image's height to </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A handle to the loaded texture, or a NULL handle if loading failed (in which case width and height are not written to) </dd></dl>
+
+</div>
+</div>
+<a id="afe10c858086ca3d29645100df1d9ff4c" name="afe10c858086ca3d29645100df1d9ff4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="file:///C:/Users/Charles/Desktop/LA%20HORDE/CODE/h3-doc/html/h3_8h.html#afe10c858086ca3d29645100df1d9ff4c">◆&nbsp;</a></span>H3_Transform_GetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tbody><tr>
+          <td class="memname">void H3_Transform_GetPosition </td>
+          <td>(</td>
+          <td class="paramtype">SH3Transform *&nbsp;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&nbsp;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&nbsp;</td>
+          <td class="paramname"><em>y</em>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </tbody></table>
+</div><div class="memdoc">
+
+<p>Gets a position from a SH3Transform pointer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tbody><tr><td class="paramname">transform</td><td>Pointer to the transform </td></tr>
+    <tr><td class="paramname">x</td><td>Pointer to write the horizontal position to </td></tr>
+    <tr><td class="paramname">y</td><td>Pointer to write the vertical position to </td></tr>
+  </tbody></table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"><address class="footer"><small>
+Generated by&nbsp;<a href="https://www.doxygen.org/index.html"><img class="footer" src="./Hydrogen3_basedoc_files/doxygen.svg" width="104" height="31" alt="doxygen"></a> 1.9.2
+</small></address>
+
+
+</body></html>

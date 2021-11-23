@@ -116,7 +116,8 @@ enum class EH3TypeInternal
 	SceneObject = 1,
 	TmxMap,
 	Scene,
-	Sound
+	Sound,
+	Joint
 };
 
 struct SH3ObjectBase_
@@ -179,6 +180,14 @@ struct SH3Sound_
 
 	sf::Sound       sound;
 	sf::SoundBuffer soundBuffer;
+};
+
+struct SH3Joint_
+{
+	EH3TypeInternal type = EH3TypeInternal::Joint;
+
+	SH3Scene_* scene;
+	b2Joint* joint;
 };
 
 // ============================================================================
@@ -312,6 +321,11 @@ void H3Internal_DecomposeTransform(sf::Transform* transform, float& px, float& p
 
 b2Shape* H3Internal_MakePhysicsShape(const SH3ColliderDesc& desc);
 b2Body*  H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, SH3ColliderDesc* descList, uint32_t numShapes, bool rotationLocked, void* userData);
+
+b2Joint* H3Internal_CreateDistanceJoint(b2World* world, const SH3JointDesc& desc);
+b2Joint* H3Internal_CreateRevoluteJoint(b2World* world, const SH3JointDesc& desc);
+b2Joint* H3Internal_CreatePrismaticJoint(b2World* world, const SH3JointDesc& desc);
+b2Joint* H3Internal_CreateWheelJoint(b2World* world, const SH3JointDesc& desc);
 
 // ============================================================================
 
@@ -880,6 +894,36 @@ H3_CAPI void H3_Object_SetAngularVelocity(H3Handle object, float v)
 H3_CAPI void H3_Object_AddAngularVelocity(H3Handle object, float v)
 {
 	H3_Object_SetAngularVelocity(object, H3_Object_GetAngularVelocity(object) + v);
+}
+
+H3_CAPI H3Handle H3_Joint_Create(H3Handle scene, SH3JointDesc jointDesc)
+{
+	H3_ASSERT(scene, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)scene)->type == EH3TypeInternal::Scene, "Handle type mismatch");
+	SH3Scene_* sScene = (SH3Scene_*)scene;
+
+	SH3Joint_* result = new SH3Joint_;
+	result->scene = sScene;
+
+	switch (jointDesc.type)
+	{
+	case JT_Distance:  result->joint = H3Internal_CreateDistanceJoint(sScene->physicsWorld, jointDesc); break;
+	case JT_Revolute:  result->joint = H3Internal_CreateRevoluteJoint(sScene->physicsWorld, jointDesc); break;
+	case JT_Prismatic: result->joint = H3Internal_CreatePrismaticJoint(sScene->physicsWorld, jointDesc); break;
+	case JT_Wheel:     result->joint = H3Internal_CreateWheelJoint(sScene->physicsWorld, jointDesc); break;
+	}
+
+	return result;
+}
+
+H3_CAPI void H3_Joint_Destroy(H3Handle joint)
+{
+	H3_ASSERT(joint, "object must not be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)joint)->type == EH3TypeInternal::Joint, "Handle type mismatch");
+	SH3Joint_* sJoint = (SH3Joint_*)joint;
+
+	sJoint->scene->physicsWorld->DestroyJoint(sJoint->joint);
+	delete sJoint;
 }
 
 H3_CAPI void H3_Transform_GetPosition(SH3Transform* transform, float* x, float* y)
@@ -1906,4 +1950,78 @@ b2Body* H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, S
 	}
 
 	return result;
+}
+
+
+b2Joint* H3Internal_CreateDistanceJoint(b2World* world, const SH3JointDesc& desc)
+{
+	b2DistanceJointDef def;
+	def.bodyA            = ((SH3SceneObject_*)(desc.body1))->physicsBody;
+	def.bodyB            = ((SH3SceneObject_*)(desc.body2))->physicsBody;
+	def.localAnchorA     = { desc.localAnchor1.x * 0.01f, desc.localAnchor1.y * 0.01f };
+	def.localAnchorB     = { desc.localAnchor2.x * 0.01f, desc.localAnchor2.y * 0.01f };
+	def.collideConnected = true;
+
+
+	def.length    = 0.01f * desc.data.distance.restLength;
+	def.minLength = 0.01f * desc.data.distance.minLength;
+	def.maxLength = 0.01f * desc.data.distance.maxLength;
+	def.damping   = desc.data.distance.damping;
+	def.stiffness = desc.data.distance.stiffness;
+
+	return world->CreateJoint(&def);
+}
+
+b2Joint* H3Internal_CreateRevoluteJoint(b2World* world, const SH3JointDesc& desc)
+{
+	b2RevoluteJointDef def;
+	def.bodyA            = ((SH3SceneObject_*)(desc.body1))->physicsBody;
+	def.bodyB            = ((SH3SceneObject_*)(desc.body2))->physicsBody;
+	def.localAnchorA     = { desc.localAnchor1.x * 0.01f, desc.localAnchor1.y * 0.01f };
+	def.localAnchorB     = { desc.localAnchor2.x * 0.01f, desc.localAnchor2.y * 0.01f };
+	def.collideConnected = true;
+
+	def.enableLimit    = desc.data.revolute.enableLimits;
+	def.lowerAngle     = desc.data.revolute.lowerAngle;
+	def.upperAngle     = desc.data.revolute.upperAngle;
+	def.referenceAngle = desc.data.revolute.referenceAngle;
+	
+	return world->CreateJoint(&def);
+}
+
+b2Joint* H3Internal_CreatePrismaticJoint(b2World* world, const SH3JointDesc& desc)
+{
+	b2PrismaticJointDef def;
+	def.bodyA            = ((SH3SceneObject_*)(desc.body1))->physicsBody;
+	def.bodyB            = ((SH3SceneObject_*)(desc.body2))->physicsBody;
+	def.localAnchorA     = { desc.localAnchor1.x * 0.01f, desc.localAnchor1.y * 0.01f };
+	def.localAnchorB     = { desc.localAnchor2.x * 0.01f, desc.localAnchor2.y * 0.01f };
+	def.collideConnected = true;
+
+	def.localAxisA       = { desc.data.prismatic.localAxis.x, desc.data.prismatic.localAxis.y };
+	def.enableLimit      = desc.data.prismatic.enableLimits;
+	def.referenceAngle   = desc.data.prismatic.referenceAngle;
+	def.lowerTranslation = desc.data.prismatic.lowerTranslation * 0.01f;
+	def.upperTranslation = desc.data.prismatic.upperTranslation * 0.01f;
+
+	return world->CreateJoint(&def);
+}
+
+b2Joint* H3Internal_CreateWheelJoint(b2World* world, const SH3JointDesc& desc)
+{
+	b2WheelJointDef def;
+	def.bodyA            = ((SH3SceneObject_*)(desc.body1))->physicsBody;
+	def.bodyB            = ((SH3SceneObject_*)(desc.body2))->physicsBody;
+	def.localAnchorA     = { desc.localAnchor1.x * 0.01f, desc.localAnchor1.y * 0.01f };
+	def.localAnchorB     = { desc.localAnchor2.x * 0.01f, desc.localAnchor2.y * 0.01f };
+	def.collideConnected = true;
+
+	def.damping          = desc.data.wheel.damping;
+	def.stiffness        = desc.data.wheel.stiffness;
+	def.enableLimit      = desc.data.wheel.enableLimits;
+	def.lowerTranslation = desc.data.wheel.lowerTranslation * 0.01f;
+	def.upperTranslation = desc.data.wheel.upperTranslation * 0.01f;
+	def.localAxisA       = { desc.data.wheel.localAxis.x, desc.data.wheel.localAxis.y };
+
+	return world->CreateJoint(&def);
 }

@@ -85,6 +85,70 @@ typedef enum
 } EH3ColliderDynamicsType;
 
 /**
+ * Physics joint type
+ */
+typedef enum
+{
+	JT_Distance,  //!< Linear distance (spring-like)
+	JT_Revolute,  //!< Revolute (rotating)
+	JT_Prismatic, //!< Prismatic (One-axis rotation, like a piston)
+	JT_Wheel,     //!< Wheel. Designed for vehicles, includes suspension.
+
+	EH3JointType_Count
+} EH3JointType;
+
+/**
+ * Descriptor of a physics joint. Fill only the union part you need.
+ */
+typedef struct
+{
+	EH3JointType type;                              //!< The joint type
+
+	H3Handle     body1;                             //!< First body to attach
+	H3Handle     body2;                             //!< Second body to attach
+
+	struct { float x; float y; } localAnchor1;      //!< Anchor relative to body1's origin
+	struct { float x; float y; } localAnchor2;      //!< Anchor relative to body2's origin
+
+	union {
+		struct {
+			float restLength;                       //!< Rest length of this joint
+			float minLength;                        //!< Minimum length
+			float maxLength;                        //!< Maximum length
+			float stiffness;                        //!< Linear stiffness in N/m
+			float damping;                          //!< Linear damping in N.s/m
+		} distance;
+
+		struct {
+			float referenceAngle;                   //!< The (body2 - body1) angle in the reference state
+			bool  enableLimits;                     //!< Enable lower/upper limits ?
+			float lowerAngle;                       //!< Lower angle limit
+			float upperAngle;                       //!< Upper angle limit
+		} revolute;
+
+		struct {
+			struct { float x; float y; } localAxis; //!< Translation axis relative to body1
+			float referenceAngle;                   //!< The (body2 - body1) angle in the reference state
+
+			bool  enableLimits;                     //!< Enable lower/upper limits ?
+			float lowerTranslation;                 //!< lower translation limit
+			float upperTranslation;                 //!< upper translation limit
+		} prismatic;
+
+		struct {
+			struct { float x; float y; } localAxis; //!< Translation axis relative to body1
+
+			bool  enableLimits;                     //!< Enable lower/upper limits ?
+			float lowerTranslation;                 //!< lower translation limit
+			float upperTranslation;                 //!< upper translation limit
+		
+			float stiffness;                        //!< suspension stiffness in N/m
+			float damping;                          //!< suspension damping in N.s/m
+		} wheel;
+	} data;
+} SH3JointDesc;
+
+/**
  * H3 initialization parameters, passed to H3_Init
  */
 typedef struct
@@ -557,6 +621,22 @@ void H3_Object_SetAngularVelocity(H3Handle object, float v);
  * \param v      The horizontal component of the velocity to add
  */
 void H3_Object_AddAngularVelocity(H3Handle object, float v);
+
+// ============================================================================
+
+/**
+ * \brief Creates a joint (a constraint used to hold two or more bodies together)
+ * \param scene The scene to create the joint into
+ * \param joint The joint descriptor
+ * \return The newly created joint
+ */
+H3Handle H3_Joint_Create(H3Handle scene, SH3JointDesc jointDesc);
+
+/**
+ * \brief Destroys a joint
+ * \param joint The joint to destroy
+ */
+void     H3_Joint_Destroy(H3Handle joint);
 
 // ============================================================================
 
