@@ -113,6 +113,7 @@ typedef struct
 	} shapeData;
 
 	struct { float x, y; } offset;
+	float rotation;
 
 	struct
 	{

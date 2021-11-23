@@ -1058,9 +1058,16 @@ H3_CAPI void H3_Map_RegisterObjectLayerForPhysicsInScene(H3Handle scene, H3Handl
 			if (!object.visible())
 				continue;
 
+			float cx = object.getPosition().x;
+			float cy = object.getPosition().y;
+
 			SH3ColliderDesc newDesc;
-			newDesc.offset.x = object.getPosition().x;
-			newDesc.offset.y = object.getPosition().y;
+			newDesc.offset.x = 0.0f;
+			newDesc.offset.y = 0.0f;
+			newDesc.rotation = 0.0f;
+			newDesc.dynamicsType = CDT_Static;
+			newDesc.isTrigger = false;
+			newDesc.dynamicsData.mass = 1000.0f;
 
 			switch (object.getShape())
 			{
@@ -1074,18 +1081,17 @@ H3_CAPI void H3_Map_RegisterObjectLayerForPhysicsInScene(H3Handle scene, H3Handl
 				newDesc.shapeType = CST_Box;
 				newDesc.shapeData.box.width  = object.getAABB().width;
 				newDesc.shapeData.box.height = object.getAABB().height;
-				newDesc.offset.x += 0.5f * newDesc.shapeData.box.width;
-				newDesc.offset.y += 0.5f * newDesc.shapeData.box.height;
+				newDesc.shapeData.box.anchor = A_Top | A_Left;
+				newDesc.rotation = object.getRotation();
 				colliders.push_back(newDesc);
 				break;
 
 			default:
 				break;
 			}
-		}
 
-		if (colliders.size() > 0)
-			H3Internal_CreateAndAddPhysicsBody(scn->physicsWorld, 0.0f, 0.0f, &colliders[0], colliders.size(), true, nullptr);
+			H3Internal_CreateAndAddPhysicsBody(scn->physicsWorld, cx, cy, &colliders.back(), 1, true, nullptr);
+		}
 	}
 }
 
@@ -1826,11 +1832,34 @@ b2Shape* H3Internal_MakePhysicsShape(const SH3ColliderDesc& desc)
 		break;
 
 	case CST_Box:
+	{
+		float px = desc.offset.x;
+		float py = desc.offset.y;
+
+		switch (desc.shapeData.box.anchor & 0x0f)
+		{
+		case A_Left:  px += desc.shapeData.box.width * 0.5f; break;
+		case A_Right: px -= desc.shapeData.box.width * 0.5f; break;
+
+		default:
+			break;
+		}
+
+		switch (desc.shapeData.box.anchor & 0xf0)
+		{
+		case A_Top:    py += desc.shapeData.box.height * 0.5f; break;
+		case A_Bottom: py -= desc.shapeData.box.height * 0.5f; break;
+
+		default:
+			break;
+		}
+
 		shape = new b2PolygonShape;
 		static_cast<b2PolygonShape*>(shape)->SetAsBox(desc.shapeData.box.width * 0.5f * 0.01f, desc.shapeData.box.height * 0.5f * 0.01f);
 		for (auto& v : static_cast<b2PolygonShape*>(shape)->m_vertices)
-			v += b2Vec2(desc.offset.x * 0.01f, desc.offset.y * 0.01f);
+			v += b2Vec2(px * 0.01f, py * 0.01f);
 		shape->m_radius = b2_polygonRadius;
+	}
 		break;
 
 	default:
@@ -1852,7 +1881,8 @@ b2Body* H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, S
 		}
 	}(descList[0].dynamicsType);
 
-	bodyDef.position.Set(px, py);
+	bodyDef.position.Set(px * 0.01f, py * 0.01f);
+	bodyDef.angle = descList->rotation * H3_DEG2RAD;
 	bodyDef.fixedRotation = rotationLocked ? (descList[0].dynamicsType == CDT_Dynamic) : false;
 	bodyDef.userData.pointer = (uintptr_t)userData;
 	b2Body* result = world->CreateBody(&bodyDef);
