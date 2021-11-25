@@ -1940,9 +1940,9 @@ b2Body* H3Internal_CreateAndAddPhysicsBody(b2World* world, float px, float py, S
 		b2FixtureDef fixtureDef;
 		fixtureDef.isSensor = desc.isTrigger;
 		fixtureDef.shape = shape;
-		fixtureDef.density = 1.0f;
-		fixtureDef.friction = 0.3f;
-		fixtureDef.restitution = 0.0f;
+		fixtureDef.density = 100.0f;
+		fixtureDef.friction = 0.4f;
+		fixtureDef.restitution = 0.1f;
 		fixtureDef.filter.categoryBits = 0xffff;
 		fixtureDef.filter.maskBits = 0xffff;
 
@@ -1961,7 +1961,7 @@ b2Joint* H3Internal_CreateDistanceJoint(b2World* world, const SH3JointDesc& desc
 	def.bodyB            = ((SH3SceneObject_*)(desc.body2))->physicsBody;
 	def.localAnchorA     = { desc.localAnchor1.x * 0.01f, desc.localAnchor1.y * 0.01f };
 	def.localAnchorB     = { desc.localAnchor2.x * 0.01f, desc.localAnchor2.y * 0.01f };
-	def.collideConnected = true;
+	def.collideConnected = false;
 
 
 	def.length    = 0.01f * desc.data.distance.restLength;
@@ -1980,7 +1980,7 @@ b2Joint* H3Internal_CreateRevoluteJoint(b2World* world, const SH3JointDesc& desc
 	def.bodyB            = ((SH3SceneObject_*)(desc.body2))->physicsBody;
 	def.localAnchorA     = { desc.localAnchor1.x * 0.01f, desc.localAnchor1.y * 0.01f };
 	def.localAnchorB     = { desc.localAnchor2.x * 0.01f, desc.localAnchor2.y * 0.01f };
-	def.collideConnected = true;
+	def.collideConnected = false;
 
 	def.enableLimit    = desc.data.revolute.enableLimits;
 	def.lowerAngle     = desc.data.revolute.lowerAngle;
@@ -1997,7 +1997,7 @@ b2Joint* H3Internal_CreatePrismaticJoint(b2World* world, const SH3JointDesc& des
 	def.bodyB            = ((SH3SceneObject_*)(desc.body2))->physicsBody;
 	def.localAnchorA     = { desc.localAnchor1.x * 0.01f, desc.localAnchor1.y * 0.01f };
 	def.localAnchorB     = { desc.localAnchor2.x * 0.01f, desc.localAnchor2.y * 0.01f };
-	def.collideConnected = true;
+	def.collideConnected = false;
 
 	def.localAxisA       = { desc.data.prismatic.localAxis.x, desc.data.prismatic.localAxis.y };
 	def.enableLimit      = desc.data.prismatic.enableLimits;
@@ -2015,7 +2015,7 @@ b2Joint* H3Internal_CreateWheelJoint(b2World* world, const SH3JointDesc& desc)
 	def.bodyB            = ((SH3SceneObject_*)(desc.body2))->physicsBody;
 	def.localAnchorA     = { desc.localAnchor1.x * 0.01f, desc.localAnchor1.y * 0.01f };
 	def.localAnchorB     = { desc.localAnchor2.x * 0.01f, desc.localAnchor2.y * 0.01f };
-	def.collideConnected = true;
+	def.collideConnected = false;
 
 	def.damping          = desc.data.wheel.damping;
 	def.stiffness        = desc.data.wheel.stiffness;
