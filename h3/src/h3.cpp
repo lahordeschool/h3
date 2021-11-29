@@ -428,7 +428,7 @@ H3_CAPI float H3_Input_GetGamepadAxisValue(EH3GamepadAxis axis)
 	{
 	case GA_LeftStick_X:  return gGamepad.leftStickX;
 	case GA_LeftStick_Y:  return gGamepad.leftStickY;
-	case GA_RightStick_X: return gGamepad.leftStickX;
+	case GA_RightStick_X: return gGamepad.rightStickX;
 	case GA_RightStick_Y: return gGamepad.rightStickY;
 	case GA_LeftTrigger:  return gGamepad.leftTrigger;
 	case GA_RightTrigger: return gGamepad.rightTrigger;
