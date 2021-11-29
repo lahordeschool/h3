@@ -48,6 +48,44 @@ typedef enum
 	EH3MouseButton_Count
 } EH3MouseButton;
 
+/*
+ * Gamepad axes
+ */ 
+typedef enum
+{
+	GA_LeftStick_X,
+	GA_LeftStick_Y,
+	GA_RightStick_X,
+	GA_RightStick_Y,
+	GA_LeftTrigger,
+	GA_RightTrigger,
+
+	EH3GamepadAxis_Count
+} EH3GamepadAxis;
+
+/*
+ * Gamepad buttons
+ */
+typedef enum
+{
+	GB_A,
+	GB_B,
+	GB_X,
+	GB_Y,
+	GB_DPad_Left,
+	GB_DPad_Right,
+	GB_DPad_Up,
+	GB_DPad_Down,
+	GB_LeftToggle,
+	GB_RightToggle,
+	GB_LeftStick,
+	GB_RightStick,
+	GB_Start,
+	GB_Select,
+
+	EH3GamepadButton_Count
+} EH3GamepadButton;
+
 /**
  * Anchor flag.
  * A full anchor is a bitwise OR of a horizontal and a vertical anchor flag, ie. (A_Center | A_Bottom)
@@ -333,15 +371,33 @@ void H3_Input_GetMousePos(H3Handle h3, int* x, int* y);
 
 /**
  * \brief Returns true if the mouse button is down, false otherwise
- * \param k the mouse button to test
+ * \param btn the mouse button to test
  */
 bool H3_Input_IsMouseBtnDown(EH3MouseButton btn);
 
 /**
- * \brief Returns true on the first frame the mouse button is down, false otherwise
- * \param k the mouse button to test
+ * \brief Returns true on the first frame the gamepad button is down, false otherwise
+ * \param btn the mouse button to test
  */
 bool H3_Input_IsMouseBtnPressed(EH3MouseButton btn);
+
+/**
+ * \brief Returns true if the mouse button is down, false otherwise
+ * \param btn the gamepad button to test
+ */
+bool H3_Input_IsGamepadBtnDown(EH3GamepadButton btn);
+
+/**
+ * \brief Returns true on the first frame the gamepad button is down, false otherwise
+ * \param btn the gamepad button to test
+ */
+bool H3_Input_IsGamepadBtnPressed(EH3GamepadButton btn);
+
+/**
+ * \brief Returns the value of the specified axis, between -1 and 1 for sticks and betbeen 0 and 1 for triggers
+ * \param btn the gamepad axis to get the value of
+ */
+float H3_Input_GetGamepadAxisValue(EH3GamepadAxis axis);
 
 // ============================================================================
 

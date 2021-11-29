@@ -1,5 +1,4 @@
 #include <h3.h>
-#include <h3/internal.h>
 #include <h3/tmxlayer.h>
 
 #include <cassert>
@@ -19,6 +18,8 @@
 #include <imgui/imgui-SFML.h>
 
 #include <box2d/box2d.h>
+
+#include <h3/internal.h>
 
 #pragma comment(lib, "winmm.lib")
 #pragma comment(lib, "opengl32.lib")
@@ -306,6 +307,10 @@ bool      gPreviousKeyStates[EH3Key_Count] = { false };
 bool      gCurrentMouseButtonStates[EH3MouseButton_Count]  = { false };
 bool      gPreviousMouseButtonStates[EH3MouseButton_Count] = { false };
 
+Gamepad   gGamepad;
+bool      gCurrentGamepadButtonStates[EH3GamepadButton_Count] = { false };
+bool      gPreviousGamepadButtonStates[EH3GamepadButton_Count] = { false };
+
 // ============================================================================
 
 void H3Internal_AddObjectToScene(SH3SceneObject_* object, const std::string& sObjName, SH3Scene_* scene);
@@ -405,6 +410,33 @@ H3_CAPI bool H3_Input_IsMouseBtnDown(EH3MouseButton btn)
 H3_CAPI bool H3_Input_IsMouseBtnPressed(EH3MouseButton btn)
 {
 	return (gCurrentMouseButtonStates[btn] && !gPreviousMouseButtonStates[btn]);
+}
+
+H3_CAPI bool H3_Input_IsGamepadBtnDown(EH3GamepadButton btn)
+{
+	return gCurrentGamepadButtonStates[btn];
+}
+
+H3_CAPI bool H3_Input_IsGamepadBtnPressed(EH3GamepadButton btn)
+{
+	return (gCurrentGamepadButtonStates[btn] && !gPreviousGamepadButtonStates[btn]);
+}
+
+H3_CAPI float H3_Input_GetGamepadAxisValue(EH3GamepadAxis axis)
+{
+	switch (axis)
+	{
+	case GA_LeftStick_X:  return gGamepad.leftStickX;
+	case GA_LeftStick_Y:  return gGamepad.leftStickY;
+	case GA_RightStick_X: return gGamepad.leftStickX;
+	case GA_RightStick_Y: return gGamepad.rightStickY;
+	case GA_LeftTrigger:  return gGamepad.leftTrigger;
+	case GA_RightTrigger: return gGamepad.rightTrigger;
+	default:
+		break;
+	}
+
+	return 0.0f;
 }
 
 H3_CAPI H3Handle H3_Scene_Create(H3Handle h3, bool physicsLocksRotation)
@@ -1631,6 +1663,35 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 					return sf::Mouse::ButtonCount;
 				}
 			})());
+		}
+
+		if (gGamepad.Refresh())
+		{
+			for (int k = 0; k < EH3GamepadButton_Count; ++k)
+			{
+				gPreviousGamepadButtonStates[k] = gCurrentGamepadButtonStates[k];
+				gCurrentGamepadButtonStates[k] = gGamepad.IsPressed(([k]() {
+					switch (k)
+					{
+					case GB_A:           return XINPUT_GAMEPAD_A;
+					case GB_B:           return XINPUT_GAMEPAD_B;
+					case GB_X:           return XINPUT_GAMEPAD_X;
+					case GB_Y:           return XINPUT_GAMEPAD_Y;
+					case GB_DPad_Left:   return XINPUT_GAMEPAD_DPAD_LEFT;
+					case GB_DPad_Right:  return XINPUT_GAMEPAD_DPAD_RIGHT;
+					case GB_DPad_Up:     return XINPUT_GAMEPAD_DPAD_UP;
+					case GB_DPad_Down:   return XINPUT_GAMEPAD_DPAD_DOWN;
+					case GB_LeftToggle:  return XINPUT_GAMEPAD_LEFT_SHOULDER;
+					case GB_RightToggle: return XINPUT_GAMEPAD_RIGHT_SHOULDER;
+					case GB_LeftStick:   return XINPUT_GAMEPAD_LEFT_THUMB;
+					case GB_RightStick:  return XINPUT_GAMEPAD_RIGHT_THUMB;
+					case GB_Start:       return XINPUT_GAMEPAD_START;
+					case GB_Select:      return XINPUT_GAMEPAD_BACK;
+					default:
+						return -1;
+					}
+				})());
+			}
 		}
 
 		sf::Event e;
