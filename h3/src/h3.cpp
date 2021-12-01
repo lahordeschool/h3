@@ -1268,7 +1268,7 @@ H3_CAPI void H3_Sound_SetPosition(H3Handle snd, float px, float py)
 	if (isnan(py)) py = 0.0f;
 
 	SH3Sound_* sound = (SH3Sound_*)snd;
-	sound->sound.setPosition(sf::Vector3f(px, 0.0f, py));
+	sound->sound.setPosition(sf::Vector3f(px / 32.0f, 0.0f, py / 32.0f));
 }
 
 H3_CAPI void H3_Sound_Stop(H3Handle snd)
@@ -1288,7 +1288,7 @@ H3_CAPI void H3_Listener_SetLocation(float px, float py, float angle)
 
 H3_CAPI void H3_Listener_SetPosition(float px, float py)
 {
-	sf::Listener::setPosition(sf::Vector3f(px, 0.0f, py));
+	sf::Listener::setPosition(sf::Vector3f(px / 32.0f, 0.0f, py / 32.0f));
 }
 
 H3_CAPI void H3_Listener_SetRotation(float angle)
