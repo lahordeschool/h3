@@ -1255,7 +1255,7 @@ H3_CAPI void H3_Sound_PlaySpatialized(H3Handle snd, float volume, float px, floa
 	sound->sound.setVolume(volume * 100.0f);
 	sound->sound.setLoop(loop);
 	sound->sound.setRelativeToListener(true);
-	sound->sound.setPosition(sf::Vector3f(px, 0.0f, py));
+	H3_Sound_SetPosition(snd, px, py);
 	sound->sound.play();
 }
 
@@ -1263,6 +1263,9 @@ H3_CAPI void H3_Sound_SetPosition(H3Handle snd, float px, float py)
 {
 	H3_ASSERT(snd, "snd cannot be NULL");
 	H3_ASSERT(((SH3ObjectBase_*)snd)->type == EH3TypeInternal::Sound, "Handle type mismatch");
+
+	if (isnan(px)) px = 0.0f;
+	if (isnan(py)) py = 0.0f;
 
 	SH3Sound_* sound = (SH3Sound_*)snd;
 	sound->sound.setPosition(sf::Vector3f(px, 0.0f, py));
