@@ -485,6 +485,11 @@ H3_CAPI void H3_Scene_SetGravity(H3Handle scene, float x, float y)
 
 H3_CAPI H3Handle H3_Object_Create(H3Handle scene, const char* objName, H3Handle parent)
 {
+	return H3_Object_Create2(scene, objName, parent, 0);
+}
+
+H3_CAPI H3Handle H3_Object_Create2(H3Handle scene, const char* objName, H3Handle parent, int renderOrder)
+{
 	std::string sObjName(objName);
 
 	H3_ASSERT(scene, "scene cannot be NULL");
@@ -496,7 +501,7 @@ H3_CAPI H3Handle H3_Object_Create(H3Handle scene, const char* objName, H3Handle 
 	SH3SceneObject_* obj = new SH3SceneObject_;
 	obj->scene = scn;
 	obj->parent = (SH3SceneObject_*)parent;
-	obj->renderOrder = 0;
+	obj->renderOrder = renderOrder;
 	obj->physicsBody = nullptr;
 	obj->enabled = true;
 	obj->physicsEnabled = false;
@@ -1393,8 +1398,8 @@ H3_CAPI void H3_Font_Printf(H3Handle h3, SH3TextProperties properties, SH3Transf
 		sf::Vector2f viewCenter = window->getView().getCenter();
 		sf::Vector2f viewExtent = window->getView().getSize();
 
-		x = viewCenter.x - (viewExtent.x * 0.5f) + (x - viewCenter.x);
-		y = viewCenter.y - (viewExtent.y * 0.5f) + (y - viewCenter.y);
+		x = viewCenter.x - (viewExtent.x * 0.5f) + x;
+		y = viewCenter.y - (viewExtent.y * 0.5f) + y;
 	}
 
 	text.setPosition(sf::Vector2f(x, y));
@@ -1735,7 +1740,7 @@ void H3Internal_AddObjectToScene(SH3SceneObject_* object, const std::string& sOb
 {
 	scene->allObjects[sObjName] = object;
 	scene->objectNames[object] = sObjName;
-	scene->objectsByRenderOrder[0].push_back(object);
+	scene->objectsByRenderOrder[object->renderOrder].push_back(object);
 
 	if (object->parent)
 	{

@@ -435,6 +435,16 @@ void H3_Scene_SetGravity(H3Handle scene, float x, float y);
 H3Handle H3_Object_Create(H3Handle scene, const char* objName, H3Handle parent);
 
 /**
+ * \brief Creates a new object.
+ * \param scene       The scene to create the object into
+ * \param objName     The name of the object to create
+ * \param parent      The parent of the new object, or NULL to make it a root object
+ * \param renderOrder The render order to use for this object
+ * \return The new object
+ */
+H3Handle H3_Object_Create2(H3Handle scene, const char* objName, H3Handle parent, int renderOrder);
+
+/**
  * \brief Destroy an object.
  * \param object    The object to destroy
  * \param recursive True to destroy all children objects as well, false otherwise
