@@ -1649,6 +1649,12 @@ H3_CAPI bool H3_DoFrame(H3Handle h3, H3Handle scene)
 				case K_Tab:       return sf::Keyboard::isKeyPressed(sf::Keyboard::Tab);
 				case K_Backspace: return sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace);
 				case K_Escape:    return sf::Keyboard::isKeyPressed(sf::Keyboard::Escape);
+				case K_Z:
+				case K_W:         return sf::Keyboard::isKeyPressed(sf::Keyboard::Z) || sf::Keyboard::isKeyPressed(sf::Keyboard::W);
+				case K_Q:
+				case K_A:         return sf::Keyboard::isKeyPressed(sf::Keyboard::Q) || sf::Keyboard::isKeyPressed(sf::Keyboard::A);
+				case K_S:         return sf::Keyboard::isKeyPressed(sf::Keyboard::S);
+				case K_D:         return sf::Keyboard::isKeyPressed(sf::Keyboard::D);
 				case K_Shift:     return sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) || sf::Keyboard::isKeyPressed(sf::Keyboard::RShift);
 				case K_Ctrl:      return sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) || sf::Keyboard::isKeyPressed(sf::Keyboard::RControl);
 				case K_F2:        return sf::Keyboard::isKeyPressed(sf::Keyboard::F2);

@@ -31,6 +31,13 @@ typedef enum
 	K_Shift,
 	K_Ctrl,
 
+	K_Z,
+	K_W,
+	K_Q,
+	K_A,
+	K_S,
+	K_D,
+
 	K_F2,
 
 	EH3Key_Count
