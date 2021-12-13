@@ -864,7 +864,7 @@ void H3_Sound_Stop(H3Handle snd);
  * \param snd The sound to test
  * \return true if the sound is playing, false otherwise
  */
-bool H3_Sound_IsPlaying(H3Handle snd)
+bool H3_Sound_IsPlaying(H3Handle snd);
 
 /**
  * \brief Sets a spatialized sound position
