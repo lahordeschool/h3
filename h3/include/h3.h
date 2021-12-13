@@ -860,6 +860,13 @@ void H3_Sound_PlaySpatialized(H3Handle snd, float volume, float px, float py, bo
 void H3_Sound_Stop(H3Handle snd);
 
 /**
+ * \brief Returns the playing state of a sound
+ * \param snd The sound to test
+ * \return true if the sound is playing, false otherwise
+ */
+bool H3_Sound_IsPlaying(H3Handle snd)
+
+/**
  * \brief Sets a spatialized sound position
  * \param snd The sound to set the position of
  * \param px  The position to set to the sound (horizontal component)

@@ -1278,11 +1278,20 @@ H3_CAPI void H3_Sound_SetPosition(H3Handle snd, float px, float py)
 
 H3_CAPI void H3_Sound_Stop(H3Handle snd)
 {
-	H3_ASSERT(snd, "map cannot be NULL");
+	H3_ASSERT(snd, "snd cannot be NULL");
 	H3_ASSERT(((SH3ObjectBase_*)snd)->type == EH3TypeInternal::Sound, "Handle type mismatch");
 
 	SH3Sound_* sound = (SH3Sound_*)snd;
 	sound->sound.stop();
+}
+
+H3_CAPI bool H3_Sound_IsPlaying(H3Handle snd)
+{
+	H3_ASSERT(snd, "snd cannot be NULL");
+	H3_ASSERT(((SH3ObjectBase_*)snd)->type == EH3TypeInternal::Sound, "Handle type mismatch");
+
+	SH3Sound_* sound = (SH3Sound_*)snd;
+	return (sound->sound.getStatus() == sf::SoundSource::Status::Playing);
 }
 
 H3_CAPI void H3_Listener_SetLocation(float px, float py, float angle)
